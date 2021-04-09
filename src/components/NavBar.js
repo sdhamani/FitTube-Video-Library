@@ -6,17 +6,22 @@ function NavBar() {
   return (
     <div>
       <nav className="navigation nav-ecom">
-        <h1 className="nav-heading">Soul Fitness</h1>
-        <div className="nav-cateogory">
-          <NavLink to="/mens" activeClassName="nav-active">
-            MEN
-          </NavLink>
-          <NavLink to="/womens" activeClassName="nav-active">
-            WOMEN
-          </NavLink>
-          <NavLink to="/equipments" activeClassName="nav-active">
-            EQUIPMENT
-          </NavLink>
+        <Link className="link-no-decoration" to="/">
+          <h1 className="nav-heading">
+            Fit<small className="nav-half-heading">Tube</small>
+          </h1>
+        </Link>
+
+        <div className="input">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search FitTube"
+            className="input-search"
+          />
+          <button className="input-search-btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
         </div>
 
         <ul className="list-no-bullets nav-pills nav-list-ecom">
@@ -28,13 +33,13 @@ function NavBar() {
               </div>
             </NavLink>
           </li>
-
           <li className="list-item-inline">
             <NavLink to="/wishlist" activeClassName="nav-active-icon">
               <div className="badge-div">
-                <i class="fa fa-heart fa-lg badge-icons" aria-hidden="true">
-                  {" "}
-                </i>
+                <i
+                  class="fa fa-history fa-lg badge-icons"
+                  aria-hidden="true"
+                ></i>{" "}
               </div>
             </NavLink>
           </li>
@@ -43,11 +48,39 @@ function NavBar() {
             <NavLink to="/cart" activeClassName="nav-active-icon">
               <div className="badge-div">
                 <i
-                  class="fa fa-shopping-cart fa-lg badge-icons"
+                  class="fa fa-play-circle fa-lg badge-icons"
                   aria-hidden="true"
-                >
-                  {" "}
-                </i>
+                ></i>
+              </div>
+            </NavLink>
+          </li>
+          <li className="list-item-inline">
+            <NavLink to="/cart" activeClassName="nav-active-icon">
+              <div className="badge-div">
+                <i
+                  class="fa fa-clock-o fa-lg badge-icons"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </NavLink>
+          </li>
+          <li className="list-item-inline">
+            <NavLink to="/cart" activeClassName="nav-active-icon">
+              <div className="badge-div">
+                <i
+                  class="fa fa-thumbs-up fa-lg badge-icons"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </NavLink>
+          </li>
+          <li className="list-item-inline">
+            <NavLink to="/cart" activeClassName="nav-active-icon">
+              <div className="badge-div">
+                <i
+                  class="fa fa-user-circle-o fa-lg badge-icons"
+                  aria-hidden="true"
+                ></i>
               </div>
             </NavLink>
           </li>
