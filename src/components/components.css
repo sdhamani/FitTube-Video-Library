@@ -1,0 +1,16 @@
+@import "https://younk.csb.app/styles.css";
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+:root {
+  --primary-color: #FFFFF;
+  --secondary-color: #124747;
+  --button-text-color: black;
+}
+
+body {
+  margin: 0px;
+  color: black;
+}
