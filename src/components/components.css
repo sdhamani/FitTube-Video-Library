@@ -5,12 +5,170 @@
 }
 
 :root {
-  --primary-color: #FFFFF;
-  --secondary-color: #124747;
-  --button-text-color: black;
+  --primary-color: black;
+  --secondary-color: white;
+  --background-color: white;
 }
 
 body {
   margin: 0px;
-  color: black;
+  background-color: var(--background-color);
+}
+
+/* Nav-bar */
+
+.nav-heading {
+  color: var(--primary-color);
+  text-align: left;
+  font-size: xx-large;
+  margin-right: 12rem;
+  font-style: normal;
+}
+
+.nav-half-heading {
+  font-size: xx-large;
+  margin: 0rem 0.2rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 0.2rem;
+}
+.nav-ecom {
+  background-color: var(--background-color);
+}
+
+.link-no-decoration {
+  text-decoration: none;
+}
+.input {
+  border: 0.5px solid var(--primary-color);
+  border-radius: 0.3rem;
+  width: 45%;
+  background-color: var(background-color);
+}
+.input-search {
+  width: 88%;
+  padding: 0.3rem 0.3rem;
+  border: none;
+  outline: none;
+  font-size: large;
+}
+
+.input button {
+  width: 12%;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-left: 1px solid grey;
+  padding: 0.5rem 1.4rem;
+}
+
+/* Side-bar */
+.action-bar {
+  margin-top: 5rem;
+  margin-left: 0;
+  width: 15rem;
+  border: none;
+  position: inherit;
+}
+.actions-div {
+  color: var(--primary-color);
+  border: none;
+}
+
+.badge-icons {
+  color: var(--primary-color);
+  margin-left: 1rem;
+  align-self: center;
+  justify-content: center;
+}
+
+.sidebar-label {
+  color: var(--primary-color);
+  font-size: large;
+  font-weight: 400;
+}
+
+.actions-types {
+  height: 2rem;
+}
+
+.cards-products {
+  background-color: red;
+}
+
+/* landing-page-div */
+
+.landing-page-main {
+  display: flex;
+  flex-direction: row;
+}
+
+.landing-page-div {
+  margin-top: 4.5rem;
+  width: 90%;
+}
+
+/* landing-page-videos */
+
+.landing-page-videos {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-left: 1rem;
+  width: 87%;
+  height: 100vh;
+}
+
+.video {
+  cursor: pointer;
+  margin: 1rem 1rem;
+  width: 28%;
+}
+
+.video-image {
+  width: 80%;
+}
+
+.video-content {
+  width: 95%;
+}
+
+.video-name {
+  font-weight: 400;
+  overflow: hidden;
+  font-size: 1.1rem;
+  margin: 0.3rem 0.2rem;
+  margin-right: 10rem;
+}
+
+.video-channel {
+  font-size: small;
+  color: grey;
+  margin: 0.1rem 0.2rem;
+}
+
+/* playvideo */
+
+.playvideo-div {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.playvideo {
+  margin: 5rem 0rem;
+  width: 80%;
+}
+.video-play-views {
+  margin-right: 25rem;
+}
+
+.video-play-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+}
+
+.video-play-actions .fa {
+  margin-right: 0.4rem;
 }
