@@ -75,8 +75,12 @@ body {
 }
 
 .badge-icons {
+  text-align: center;
+  /* align-items: center;
+  font-size: small; */
   color: var(--primary-color);
-  margin-left: 1rem;
+  margin: 0rem;
+  padding: 0rem;
   align-self: center;
   justify-content: center;
 }
@@ -103,6 +107,8 @@ body {
 }
 
 .landing-page-div {
+  display: flex;
+
   margin-top: 4.5rem;
   width: 90%;
 }
@@ -112,23 +118,33 @@ body {
 .landing-page-videos {
   color: var(--primary-color);
   text-decoration: none;
-  margin-left: 1rem;
-  width: 87%;
+  width: 100%;
   height: 100vh;
+}
+.videos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .video {
   cursor: pointer;
-  margin: 1rem 1rem;
-  width: 28%;
+  width: 22%;
+  height: 14rem;
+  display: inline-block;
+  margin: 0.3rem 0.2rem;
 }
 
 .video-image {
-  width: 80%;
+  width: 100%;
 }
 
 .video-content {
-  width: 95%;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 4rem;
 }
 
 .video-name {
@@ -136,7 +152,6 @@ body {
   overflow: hidden;
   font-size: 1.1rem;
   margin: 0.3rem 0.2rem;
-  margin-right: 10rem;
 }
 
 .video-channel {
