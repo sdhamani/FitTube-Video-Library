@@ -3,12 +3,13 @@ const videos = [
     id: "FT101",
     name: "30-Minute HIIT Cardio - No Equipment at Home | SELF",
     image:
-      "https://i.ytimg.com/an_webp/ml6cT4AZdqI/mqdefault_6s.webp?du=3000&sqp=CNKp0oMG&rs=AOn4CLAo8oFzDrHfork9CQoZ6gUcrA5ozA",
+      "https://i.ytimg.com/vi/ml6cT4AZdqI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2Yakf4nieopGux521AsbN50n9ig",
     videoLink: "https://www.youtube.com/embed/ml6cT4AZdqI",
     channel: "SELF",
   },
+
   {
-    id: "FT103",
+    id: "FT102",
     name: "20 min Full Body STRETCH/YOGA for STRESS & ANXIETY Relief",
     image:
       "https://i.ytimg.com/an_webp/sTANio_2E0Q/mqdefault_6s.webp?du=3000&sqp=CNy90oMG&rs=AOn4CLBfAmMC2JO3M0ZC5SYgI18i_-1EVg",
@@ -16,7 +17,7 @@ const videos = [
     channel: "MadFit",
   },
   {
-    id: "FT102",
+    id: "FT103",
     name: "FAST Walking in 30 minutes",
     image:
       "https://i.ytimg.com/an_webp/enYITYwvPAQ/mqdefault_6s.webp?du=3000&sqp=CMyX0oMG&rs=AOn4CLCxuQ3ZQlHWXbZoFSQrEm4Q1nqX1A",
@@ -25,7 +26,7 @@ const videos = [
   },
 
   {
-    id: "FT102",
+    id: "FT104",
     name: "30-Minute Bodyweight Abs Workout - HIIT Cardio At Home | SELF",
     image:
       "https://i.ytimg.com/vi/YJVtJMIQmkU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCDdxIbB4cmd_yL8djITaMAbO74yg",
@@ -34,7 +35,7 @@ const videos = [
     channel: "SELF",
   },
   {
-    id: "FT103",
+    id: "FT105",
     name: "30 Minute HIIT Cardio Workout + Abs At Home - With Warmup | SELF",
     image:
       "https://i.ytimg.com/an_webp/bdCX8Nb_2Mg/mqdefault_6s.webp?du=3000&sqp=CNCc0oMG&rs=AOn4CLCPTzfJekGv4I_1XTlnCAU7P5R0Pg",
@@ -42,7 +43,7 @@ const videos = [
     channel: "SELF",
   },
   {
-    id: "FT104",
+    id: "FT106",
     name:
       "30-Minute Strength & Conditioning Workout with Warm Up & Cool Down - No Equipment at Home | SELF",
     image:
@@ -51,7 +52,7 @@ const videos = [
     channel: "SELF",
   },
   {
-    id: "FT105",
+    id: "FT107",
     name:
       "25 Minute Full Body Cardio Workout - No Equipment With Warm-Up and Cool-Down | SELF",
     image:
