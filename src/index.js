@@ -3,11 +3,21 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
+import { LikedVideosProvider } from "./context/likevideos-context";
+import { WatchLaterProvider } from "./context/watchLater-context";
+
+import { HistoryProvider } from "./context/history-context";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <HistoryProvider>
+        <WatchLaterProvider>
+          <LikedVideosProvider>
+            <App />
+          </LikedVideosProvider>
+        </WatchLaterProvider>
+      </HistoryProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
