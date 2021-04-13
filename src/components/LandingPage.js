@@ -3,8 +3,10 @@ import SideBar from "./SideBar";
 
 import { Link } from "react-router-dom";
 import videos from "../data/videos";
+import useHistory from "../context/history-context";
 
 function LandingPage() {
+  let { history, historydispatch } = useHistory();
   return (
     <div className="landing-page-main">
       <SideBar />
@@ -12,12 +14,18 @@ function LandingPage() {
         <div classname="videos">
           {videos.map((item) => {
             return (
-              <div className="video">
+              <div
+                className="video"
+                onClick={(e) =>
+                  historydispatch({ type: "ADDTOHISTORY", payload: item.id })
+                }
+              >
                 <Link
                   className="landing-page-videos"
                   to={`/playvideo/${item.id}`}
                 >
                   <img className="video-image" src={item.image} alt="NA" />
+
                   <div className="video-content">
                     <div className="video-name">{item.name}</div>
                     <div className="video-channel">{item.channel}</div>
