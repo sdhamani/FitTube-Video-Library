@@ -149,7 +149,7 @@ body {
 
 .video-name {
   font-weight: 400;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-size: 1.1rem;
   margin: 0.3rem 0.2rem;
 }
@@ -186,4 +186,17 @@ body {
 
 .video-play-actions .fa {
   margin-right: 0.4rem;
+}
+
+/* playvide- likedbtn */
+
+.actionbtn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.watchlater {
+  font-size: 1rem;
+  font-weight: 600;
 }
