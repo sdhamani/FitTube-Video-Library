@@ -4,6 +4,7 @@ import videos from "../data/videos";
 import { useParams } from "react-router-dom";
 import useLikedVideos from "../context/likevideos-context";
 import useWatchLater from "../context/watchLater-context";
+import NavBar from "./NavBar";
 
 function PlayVideo() {
   const { id } = useParams();
@@ -18,6 +19,7 @@ function PlayVideo() {
   return (
     <div className="playvideo-div">
       <SideBar />
+      <NavBar />
       {video && (
         <div className="playvideo">
           <iframe

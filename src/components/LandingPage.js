@@ -1,6 +1,6 @@
 import React from "react";
 import SideBar from "./SideBar";
-
+import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 import videos from "../data/videos";
 import useHistory from "../context/history-context";
@@ -9,6 +9,7 @@ function LandingPage() {
   let { history, historydispatch } = useHistory();
   return (
     <div className="landing-page-main">
+      <NavBar />
       <SideBar />
       <div className="landing-page-div">
         <div classname="videos">
