@@ -12,15 +12,15 @@ const videos = [
     id: "FT102",
     name: "20 min Full Body STRETCH/YOGA for STRESS & ANXIETY Relief",
     image:
-      "https://i.ytimg.com/an_webp/sTANio_2E0Q/mqdefault_6s.webp?du=3000&sqp=CNy90oMG&rs=AOn4CLBfAmMC2JO3M0ZC5SYgI18i_-1EVg",
+      "https://i.ytimg.com/an_webp/sTANio_2E0Q/mqdefault_6s.webp?du=3000&sqp=CNjU3IMG&rs=AOn4CLDV4YrGAr9cCq3jtTCibLZWqC9qNA",
     videoLink: "https://www.youtube.com/embed/sTANio_2E0Q",
     channel: "MadFit",
   },
   {
     id: "FT103",
-    name: "FAST Walking in 30 minutes",
+    name: "FAST Walking in 30 minutes | Leslie Sansone",
     image:
-      "https://i.ytimg.com/an_webp/enYITYwvPAQ/mqdefault_6s.webp?du=3000&sqp=CMyX0oMG&rs=AOn4CLCxuQ3ZQlHWXbZoFSQrEm4Q1nqX1A",
+      "https://i.ytimg.com/an_webp/enYITYwvPAQ/mqdefault_6s.webp?du=3000&sqp=CPzN3IMG&rs=AOn4CLBekacoItDmdurvaYqp5WU131L8-w",
     videoLink: "https://www.youtube.com/embed/enYITYwvPAQ",
     channel: "Leslie Sansone",
   },
@@ -38,7 +38,7 @@ const videos = [
     id: "FT105",
     name: "30 Minute HIIT Cardio Workout + Abs At Home - With Warmup | SELF",
     image:
-      "https://i.ytimg.com/an_webp/bdCX8Nb_2Mg/mqdefault_6s.webp?du=3000&sqp=CNCc0oMG&rs=AOn4CLCPTzfJekGv4I_1XTlnCAU7P5R0Pg",
+      "https://i.ytimg.com/an_webp/bdCX8Nb_2Mg/mqdefault_6s.webp?du=3000&sqp=CMjZ3IMG&rs=AOn4CLBSeA4VLRgFXTreNZfSnBtAEgzv0Q",
     videoLink: "https://youtu.be/bdCX8Nb_2Mg",
     channel: "SELF",
   },
@@ -47,7 +47,7 @@ const videos = [
     name:
       "30-Minute Strength & Conditioning Workout with Warm Up & Cool Down - No Equipment at Home | SELF",
     image:
-      "https://i.ytimg.com/an_webp/vI1Yf-MBczI/mqdefault_6s.webp?du=3000&sqp=CKKh0oMG&rs=AOn4CLCWe8to-tjmgqzSF-8-s9OIiWZHug",
+      "https://i.ytimg.com/an_webp/vI1Yf-MBczI/mqdefault_6s.webp?du=3000&sqp=CN7n3IMG&rs=AOn4CLDpLfnPTWMCEzrtH6v7IN2N-8xLog",
     videoLink: "https://www.youtube.com/embed/vI1Yf-MBczI",
     channel: "SELF",
   },
@@ -56,7 +56,16 @@ const videos = [
     name:
       "25 Minute Full Body Cardio Workout - No Equipment With Warm-Up and Cool-Down | SELF",
     image:
-      "https://i.ytimg.com/an_webp/8JpKOczCPHU/mqdefault_6s.webp?du=3000&sqp=CNif0oMG&rs=AOn4CLC1rl2FTpRYCf7VrWg-pljsl6tdsQ",
+      "https://i.ytimg.com/an_webp/8JpKOczCPHU/mqdefault_6s.webp?du=3000&sqp=CMLX3IMG&rs=AOn4CLDzwaHRcWc68VhR54WJ_t1Wuuj_8Q",
+    videoLink: "https://www.youtube.com/embed/8JpKOczCPHU",
+    channel: "SELF",
+  },
+  {
+    id: "FT107",
+    name:
+      "25 Minute Full Body Cardio Workout - No Equipment With Warm-Up and Cool-Down | SELF",
+    image:
+      "https://i.ytimg.com/an_webp/8JpKOczCPHU/mqdefault_6s.webp?du=3000&sqp=CMLX3IMG&rs=AOn4CLDzwaHRcWc68VhR54WJ_t1Wuuj_8Q",
     videoLink: "https://www.youtube.com/embed/8JpKOczCPHU",
     channel: "SELF",
   },
