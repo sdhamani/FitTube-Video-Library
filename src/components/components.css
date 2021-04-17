@@ -38,6 +38,7 @@ body {
 
 .link-no-decoration {
   text-decoration: none;
+  position: cursor;
 }
 .input {
   border: 0.5px solid var(--primary-color);
@@ -63,11 +64,13 @@ body {
 
 /* Side-bar */
 .action-bar {
+  margin: 0rem 0rem;
   margin-top: 5rem;
   margin-left: 0;
   width: 15rem;
   border: none;
   position: inherit;
+  display: inline-block;
 }
 .actions-div {
   color: var(--primary-color);
@@ -93,6 +96,7 @@ body {
 
 .actions-types {
   height: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .cards-products {
@@ -108,7 +112,6 @@ body {
 
 .landing-page-div {
   display: flex;
-
   margin-top: 4.5rem;
   width: 90%;
 }
@@ -125,15 +128,15 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .video {
   cursor: pointer;
-  width: 22%;
-  height: 14rem;
+  width: 15.5rem;
+  height: 15.5rem;
   display: inline-block;
-  margin: 0.3rem 0.2rem;
+  margin: 0.5rem 0.8rem;
 }
 
 .video-image {
@@ -199,4 +202,21 @@ body {
 .watchlater {
   font-size: 1rem;
   font-weight: 600;
+}
+
+.videos-div {
+  display: flex;
+  width: 100%;
+}
+
+.videos {
+  margin-top: 5rem;
+}
+
+.no-items {
+  width: 90%;
+  height: 2rem;
+  margin-top: 6rem;
+  box-shadow: 4px 2px #888888;
+  padding: 2rem 1rem;
 }
