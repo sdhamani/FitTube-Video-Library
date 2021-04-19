@@ -15,12 +15,12 @@ function WatchLater() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
+        {watchLater.length === 0 && (
+          <p className="no-items">
+            Nothing added here yet, Maybe today is the day.
+          </p>
+        )}
         <div className="videos">
-          {!watchLaterObj && (
-            <p className="no-items">
-              Nothing added here yet, Maybe today is the day.
-            </p>
-          )}
           {watchLaterObj &&
             watchLaterObj.map((item) => {
               return (

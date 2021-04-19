@@ -15,7 +15,7 @@ function LikedVideos() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
-        {!likdeVideosObj && (
+        {likevideos.length === 0 && (
           <p className="no-items">
             Nothing added here yet, Maybe today is the day.
           </p>

@@ -14,7 +14,7 @@ function History() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
-        {!historyObj && (
+        {history.length === 0 && (
           <p className="no-items">
             Nothing added here yet, Maybe today is the day.
           </p>
