@@ -18,7 +18,7 @@ function SideBar() {
           </Link>
         </div>
         <div className="actions-types">
-          <Link className="link-no-decoration" to="/">
+          <Link className="link-no-decoration" to="/playlist">
             <i
               class="fa fa-play-circle fa-2x badge-icons"
               aria-hidden="true"
