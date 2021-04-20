@@ -26,7 +26,7 @@ function NavBar() {
 
         <ul className="list-no-bullets nav-pills nav-list-ecom">
           <li className="list-item-inline">
-            <NavLink to="/home" activeClassName="nav-active-icon">
+            <NavLink to="/" activeClassName="nav-active-icon">
               {" "}
               <div className="badge-div">
                 <i class="fa fa-home fa-lg badge-icons" aria-hidden="true"></i>{" "}
@@ -34,7 +34,7 @@ function NavBar() {
             </NavLink>
           </li>
           <li className="list-item-inline">
-            <NavLink to="/wishlist" activeClassName="nav-active-icon">
+            <NavLink to="/history" activeClassName="nav-active-icon">
               <div className="badge-div">
                 <i
                   class="fa fa-history fa-lg badge-icons"
@@ -45,7 +45,7 @@ function NavBar() {
           </li>
 
           <li className="list-item-inline">
-            <NavLink to="/cart" activeClassName="nav-active-icon">
+            <NavLink to="/playlist" activeClassName="nav-active-icon">
               <div className="badge-div">
                 <i
                   class="fa fa-play-circle fa-lg badge-icons"
@@ -55,7 +55,7 @@ function NavBar() {
             </NavLink>
           </li>
           <li className="list-item-inline">
-            <NavLink to="/cart" activeClassName="nav-active-icon">
+            <NavLink to="/watchlater" activeClassName="nav-active-icon">
               <div className="badge-div">
                 <i
                   class="fa fa-clock-o fa-lg badge-icons"
@@ -65,7 +65,7 @@ function NavBar() {
             </NavLink>
           </li>
           <li className="list-item-inline">
-            <NavLink to="/cart" activeClassName="nav-active-icon">
+            <NavLink to="/likedvideos" activeClassName="nav-active-icon">
               <div className="badge-div">
                 <i
                   class="fa fa-thumbs-up fa-lg badge-icons"
@@ -75,7 +75,7 @@ function NavBar() {
             </NavLink>
           </li>
           <li className="list-item-inline">
-            <NavLink to="/cart" activeClassName="nav-active-icon">
+            <NavLink to="/" activeClassName="nav-active-icon">
               <div className="badge-div">
                 <i
                   class="fa fa-user-circle-o fa-lg badge-icons"
