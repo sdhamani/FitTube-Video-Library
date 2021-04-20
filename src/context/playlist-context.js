@@ -31,6 +31,20 @@ export function PlaylistProvider({ children }) {
     ];
   };
 
+  const TogglePlaylistVideo = (state, playlistName, id) => {
+    console.log("Toggle", { state });
+    console.log({ playlistName }, { id });
+    return state.map((item) => {
+      if (item.name === playlistName) {
+        if (item.id.includes(id)) {
+          return { ...item, id: item.id.filter((item) => item !== id) };
+        }
+        return { ...item, id: [...item.id, id] };
+      }
+      return item;
+    });
+  };
+
   const playlistdisptachFun = (state, value) => {
     let { id, playlistName } = value.PAYLOAD;
     console.log(state);
@@ -39,7 +53,8 @@ export function PlaylistProvider({ children }) {
         return state && state.find((item) => item.name === playlistName)
           ? AddToPlaylist(state, playlistName, id)
           : CreatePlaylist(state, playlistName, id);
-
+      case "TOGGLE":
+        return TogglePlaylistVideo(state, playlistName, id);
       default:
         return state;
     }
