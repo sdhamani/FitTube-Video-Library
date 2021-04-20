@@ -12,7 +12,7 @@ function LandingPage() {
       <NavBar />
       <SideBar />
       <div className="landing-page-div">
-        <div classname="videos">
+        <div className=" landing-page-vidoes videos">
           {videos.map((item) => {
             return (
               <div
