@@ -31,7 +31,17 @@ function PlaylistModule({ showModule, setShowModule }) {
         playlist.map((item) => {
           return (
             <div>
-              <input type="checkbox" checked={item.id.includes(id)} />
+              <input
+                className="playlist-radio"
+                type="checkbox"
+                onChange={(e) =>
+                  playlistdispatch({
+                    TYPE: "TOGGLE",
+                    PAYLOAD: { id, playlistName: item.name },
+                  })
+                }
+                checked={item.id.includes(id)}
+              />
               <small className="playlist-name">{item.name}</small>
             </div>
           );
@@ -55,7 +65,7 @@ function PlaylistModule({ showModule, setShowModule }) {
 
 function PlayVideo() {
   const { id } = useParams();
-  console.log(id);
+
   const video = videos.find((item) => item.id === id);
 
   let { likevideos, likevideosdispatch } = useLikedVideos();
@@ -65,7 +75,7 @@ function PlayVideo() {
   let [showModule, setShowModule] = useState(false);
 
   return (
-    <div>
+    <div className="main">
       {showModule && (
         <PlaylistModule showModule={showModule} setShowModule={setShowModule} />
       )}
@@ -75,8 +85,7 @@ function PlayVideo() {
         {video && (
           <div className="playvideo">
             <iframe
-              width="1020"
-              height="500"
+              className="video-iframe"
               src={video.videoLink}
               title="YouTube video player"
               frameBorder="0"
@@ -90,49 +99,51 @@ function PlayVideo() {
                   <div className="video-channel">{video.channel}</div>
                   <div className="video-channel">31M views 2 years ago</div>
                 </div>
-                <div>
-                  <button
-                    className="actionbtn"
-                    onClick={(e) =>
-                      likevideosdispatch({ type: "LIKE", payload: video.id })
-                    }
-                  >
-                    {isVideoLiked ? (
-                      <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i>
-                    ) : (
-                      <i
-                        className="fa fa-thumbs-o-up fa-lg"
-                        aria-hidden="true"
-                      ></i>
-                    )}
-                  </button>
-                </div>
-                <div>
-                  <button
-                    className={
-                      inWatchLater ? " actionbtn watchlater" : "actionbtn"
-                    }
-                    onClick={(e) =>
-                      watchLaterDispatch({
-                        type: "WATCHLATER",
-                        payload: video.id,
-                      })
-                    }
-                  >
-                    <i className="fa fa-clock-o fa-lg" aria-hidden="true"></i>
-                    Watch later
-                  </button>
-                </div>
-                <div>
-                  <button
-                    className="actionbtn"
-                    onClick={(e) => setShowModule(true)}
-                  >
-                    <i className="fa fa-play-circle fa-lg" aria-hidden="true">
-                      {" "}
-                    </i>
-                    Add to Playlist
-                  </button>
+                <div className="video-play-actions-icons">
+                  <div>
+                    <button
+                      className="actionbtn"
+                      onClick={(e) =>
+                        likevideosdispatch({ type: "LIKE", payload: video.id })
+                      }
+                    >
+                      {isVideoLiked ? (
+                        <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i>
+                      ) : (
+                        <i
+                          className="fa fa-thumbs-o-up fa-lg"
+                          aria-hidden="true"
+                        ></i>
+                      )}
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      className={
+                        inWatchLater ? " actionbtn watchlater" : "actionbtn"
+                      }
+                      onClick={(e) =>
+                        watchLaterDispatch({
+                          type: "WATCHLATER",
+                          payload: video.id,
+                        })
+                      }
+                    >
+                      <i className="fa fa-clock-o fa-lg" aria-hidden="true"></i>
+                      Watch later
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      className="actionbtn"
+                      onClick={(e) => setShowModule(true)}
+                    >
+                      <i className="fa fa-play-circle fa-lg" aria-hidden="true">
+                        {" "}
+                      </i>
+                      Add to Playlist
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
