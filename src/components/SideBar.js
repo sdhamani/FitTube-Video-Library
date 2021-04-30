@@ -1,43 +1,64 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function SideBar() {
   return (
     <div className="action-bar">
       <div className="actions-div">
-        <div className="actions-types">
-          <Link className="link-no-decoration" to="/">
-            <i class="fa fa-home fa-2x badge-icons" aria-hidden="true"></i>{" "}
-            <label className="sidebar-label">Home</label>
-          </Link>
-        </div>
-        <div className="actions-types">
-          <Link className="link-no-decoration" to="/history">
-            <i class="fa fa-history fa-2x badge-icons" aria-hidden="true"></i>{" "}
-            <label className="sidebar-label">History</label>
-          </Link>
-        </div>
-        <div className="actions-types">
-          <Link className="link-no-decoration" to="/playlist">
-            <i
-              class="fa fa-play-circle fa-2x badge-icons"
-              aria-hidden="true"
-            ></i>{" "}
-            <label className="sidebar-label">Playlist</label>
-          </Link>
-        </div>
-        <div className="actions-types">
-          <Link className="link-no-decoration" to="/watchlater">
-            <i class="fa fa-clock-o fa-2x badge-icons" aria-hidden="true"></i>
-            <label className="sidebar-label">Watch Later</label>
-          </Link>
-        </div>
-        <div className="actions-types">
-          <Link className="link-no-decoration" to="/likedvideos">
-            <i class="fa fa-thumbs-up fa-2x badge-icons" aria-hidden="true"></i>
-            <label className="sidebar-label">Liked Videos</label>
-          </Link>
-        </div>
+        <nav>
+          <div className="actions-types">
+            <NavLink
+              className="link-no-decoration"
+              activeClassName="nav-active-icon"
+              to="/"
+            >
+              <i class="fa fa-home fa-2x badge-icons" aria-hidden="true"></i>{" "}
+              <label className="sidebar-label">Home</label>
+            </NavLink>
+          </div>
+          <div className="actions-types">
+            <NavLink
+              activeClassName="nav-active-icon"
+              className="link-no-decoration"
+              to="/history"
+            >
+              <i class="fa fa-history fa-2x badge-icons" aria-hidden="true"></i>{" "}
+              <label className="sidebar-label">History</label>
+            </NavLink>
+          </div>
+          <div className="actions-types">
+            <NavLink
+              className="link-no-decoration"
+              activeClassName="nav-active-icon"
+              to="/playlist"
+            >
+              <i
+                class="fa fa-play-circle fa-2x badge-icons"
+                aria-hidden="true"
+              ></i>{" "}
+              <label className="sidebar-label">Playlist</label>
+            </NavLink>
+          </div>
+          <div className="actions-types">
+            <NavLink
+              className="link-no-decoration"
+              activeClassName="nav-active-icon"
+              to="/watchlater"
+            >
+              <i class="fa fa-clock-o fa-2x badge-icons" aria-hidden="true"></i>
+              <label className="sidebar-label">Watch Later</label>
+            </NavLink>
+          </div>
+          <div className="actions-types">
+            <NavLink className="link-no-decoration" to="/likedvideos">
+              <i
+                class="fa fa-thumbs-up fa-2x badge-icons"
+                aria-hidden="true"
+              ></i>
+              <label className="sidebar-label">Liked Videos</label>
+            </NavLink>
+          </div>
+        </nav>
       </div>
     </div>
   );

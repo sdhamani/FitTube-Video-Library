@@ -14,11 +14,14 @@ function Playlist() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
-        {playlist.length === 0 && (
-          <p className="no-items">
-            Nothing added here yet, Maybe today is the day.
-          </p>
-        )}
+        <div className="page-heading">
+          <h1 className="page-heading-head">Playlist</h1>
+          {playlist.length === 0 && (
+            <p className="no-items">
+              Nothing added here yet, Maybe today is the day.
+            </p>
+          )}
+        </div>
         <div className="videos">
           {playlist &&
             playlist.map((item) => {
