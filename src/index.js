@@ -10,18 +10,22 @@ import { HistoryProvider } from "./context/history-context";
 
 import { PlaylistProvider } from "./context/playlist-context";
 
+import { VideosProvider } from "./context/videos.context";
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <PlaylistProvider>
-        <HistoryProvider>
-          <WatchLaterProvider>
-            <LikedVideosProvider>
-              <App />
-            </LikedVideosProvider>
-          </WatchLaterProvider>
-        </HistoryProvider>
-      </PlaylistProvider>
+      <VideosProvider>
+        <PlaylistProvider>
+          <HistoryProvider>
+            <WatchLaterProvider>
+              <LikedVideosProvider>
+                <App />
+              </LikedVideosProvider>
+            </WatchLaterProvider>
+          </HistoryProvider>
+        </PlaylistProvider>
+      </VideosProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
