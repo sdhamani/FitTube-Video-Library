@@ -10,7 +10,7 @@ import { HistoryProvider } from "./context/history-context";
 
 import { PlaylistProvider } from "./context/playlist-context";
 
-import { VideosProvider } from "./context/videos.context";
+import { VideosProvider } from "./context/videos-context";
 
 ReactDOM.render(
   <React.StrictMode>
