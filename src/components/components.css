@@ -66,6 +66,9 @@ body {
 
 /* nav-var mobile */
 @media screen and (max-width: 767px) {
+  .badge-div {
+    margin: 0rem 0.7rem !important;
+  }
   .input {
     display: none;
   }
@@ -77,6 +80,23 @@ body {
     margin: 0;
     font-size: large;
   }
+  .landing-page-main {
+    width: 100%;
+  }
+  .list-item-inline a {
+    margin: 0rem 2rem;
+  }
+  .nav-ecom {
+    width: 100%;
+  }
+  .nav-pills {
+    width: 80%;
+    margin-right: 1rem !important;
+  }
+
+  /* .list-item-inline-link {
+    margin: 0rem;
+  } */
 }
 
 /* Side-bar */
@@ -236,7 +256,8 @@ body {
     margin-top: 4rem !important;
   }
   .video {
-    width: 100%;
+    margin: 0rem 0.3rem;
+    width: 74%;
     height: 20rem;
   }
 
@@ -269,6 +290,7 @@ body {
     margin: 1rem;
   }
   .landing-page-vidoes {
+    width: 85%;
     margin-top: 0rem !important;
   }
 }

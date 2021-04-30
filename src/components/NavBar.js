@@ -40,7 +40,11 @@ function NavBar() {
 
         <ul className="list-no-bullets nav-pills nav-list-ecom">
           <li className="list-item-inline">
-            <NavLink to="/" activeClassName="nav-active-icon">
+            <NavLink
+              to="/"
+              className="list-item-inline-link"
+              activeClassName="nav-active-icon"
+            >
               {" "}
               <div className="badge-div">
                 <i class="fa fa-home fa-lg badge-icons" aria-hidden="true"></i>{" "}
@@ -89,7 +93,7 @@ function NavBar() {
             </NavLink>
           </li>
           <li className="list-item-inline">
-            <NavLink to="/" activeClassName="nav-active-icon">
+            <NavLink to="/user" activeClassName="nav-active-icon">
               <div className="badge-div">
                 <i
                   class="fa fa-user-circle-o fa-lg badge-icons"

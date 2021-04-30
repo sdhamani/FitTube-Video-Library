@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useHistory from "../context/history-context";
 import useVideos from "../context/videos-context";
 function LandingPage() {
-  let { history, historydispatch } = useHistory();
+  let { historydispatch } = useHistory();
   let { videos } = useVideos();
   console.log("videos", videos);
   return (
@@ -13,7 +13,7 @@ function LandingPage() {
       <NavBar />
       <SideBar />
       <div className="landing-page-div">
-        <div className=" landing-page-vidoes videos">
+        <div>
           {videos &&
             videos.map((item) => {
               return (
