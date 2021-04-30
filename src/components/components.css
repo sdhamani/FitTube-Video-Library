@@ -41,6 +41,7 @@ body {
   text-decoration: none;
   position: cursor;
 }
+
 .input {
   border: 0.5px solid var(--primary-color);
   border-radius: 0.3rem;
@@ -156,20 +157,21 @@ body {
 .video {
   cursor: pointer;
   width: 15.5rem;
-  height: 15.5rem;
   display: inline-block;
   margin: 0.5rem 0.8rem;
 }
 
 .video-image {
   width: 100%;
+  height: 10rem;
 }
 
 .video-content {
   display: flex;
   flex-direction: column;
   width: 90%;
-  height: 4rem;
+  height: 7rem;
+  overflow: hidden;
 }
 
 .video-name {
@@ -288,6 +290,14 @@ body {
   width: 100%;
 }
 
+.page-heading {
+  width: 100%;
+  margin-top: 4rem;
+}
+.page-heading-head {
+  margin-left: 1rem;
+}
+
 .videos {
   margin-top: 5rem;
 }
@@ -298,7 +308,7 @@ body {
 .no-items {
   width: 90%;
   height: 2rem;
-  margin-top: 6rem;
+  margin-top: 1rem;
   box-shadow: 4px 2px #888888;
   padding: 2rem 1rem;
 }
@@ -374,4 +384,10 @@ playlist-compo */
 .playlist-Name {
   font-size: x-large;
   display: block;
+}
+
+.screen-header {
+  display: block;
+  margin-top: 5rem;
+  margin-left: 5rem;
 }
