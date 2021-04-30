@@ -21,6 +21,7 @@ function NavBar() {
       <nav className="navigation nav-ecom">
         <Link className="link-no-decoration" to="/">
           <h1 className="nav-heading">
+            <i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i>
             Fit<small className="nav-half-heading">Tube</small>
           </h1>
         </Link>
@@ -38,71 +39,76 @@ function NavBar() {
           </button>
         </div>
 
-        <ul className="list-no-bullets nav-pills nav-list-ecom">
-          <li className="list-item-inline">
-            <NavLink
-              to="/"
-              className="list-item-inline-link"
-              activeClassName="nav-active-icon"
-            >
-              {" "}
-              <div className="badge-div">
-                <i class="fa fa-home fa-lg badge-icons" aria-hidden="true"></i>{" "}
-              </div>
-            </NavLink>
-          </li>
-          <li className="list-item-inline">
-            <NavLink to="/history" activeClassName="nav-active-icon">
-              <div className="badge-div">
-                <i
-                  class="fa fa-history fa-lg badge-icons"
-                  aria-hidden="true"
-                ></i>{" "}
-              </div>
-            </NavLink>
-          </li>
+        <div className="nav-icons">
+          <ul className="list-no-bullets nav-pills nav-list-ecom">
+            <li className="list-item-inline">
+              <NavLink
+                to="/"
+                className="list-item-inline-link"
+                activeClassName="nav-active-icon"
+              >
+                {" "}
+                <div className="badge-div">
+                  <i
+                    class="fa fa-home fa-lg badge-icons"
+                    aria-hidden="true"
+                  ></i>{" "}
+                </div>
+              </NavLink>
+            </li>
+            <li className="list-item-inline">
+              <NavLink to="/history" activeClassName="nav-active-icon">
+                <div className="badge-div">
+                  <i
+                    class="fa fa-history fa-lg badge-icons"
+                    aria-hidden="true"
+                  ></i>{" "}
+                </div>
+              </NavLink>
+            </li>
 
-          <li className="list-item-inline">
-            <NavLink to="/playlist" activeClassName="nav-active-icon">
-              <div className="badge-div">
-                <i
-                  class="fa fa-play-circle fa-lg badge-icons"
-                  aria-hidden="true"
-                ></i>
-              </div>
-            </NavLink>
-          </li>
-          <li className="list-item-inline">
-            <NavLink to="/watchlater" activeClassName="nav-active-icon">
-              <div className="badge-div">
-                <i
-                  class="fa fa-clock-o fa-lg badge-icons"
-                  aria-hidden="true"
-                ></i>
-              </div>
-            </NavLink>
-          </li>
-          <li className="list-item-inline">
-            <NavLink to="/likedvideos" activeClassName="nav-active-icon">
-              <div className="badge-div">
-                <i
-                  class="fa fa-thumbs-up fa-lg badge-icons"
-                  aria-hidden="true"
-                ></i>
-              </div>
-            </NavLink>
-          </li>
-          <li className="list-item-inline">
-            <NavLink to="/user" activeClassName="nav-active-icon">
-              <div className="badge-div">
-                <i
-                  class="fa fa-user-circle-o fa-lg badge-icons"
-                  aria-hidden="true"
-                ></i>
-              </div>
-            </NavLink>
-          </li>
-        </ul>
+            <li className="list-item-inline">
+              <NavLink to="/playlist" activeClassName="nav-active-icon">
+                <div className="badge-div">
+                  <i
+                    class="fa fa-play-circle fa-lg badge-icons"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              </NavLink>
+            </li>
+            <li className="list-item-inline">
+              <NavLink to="/watchlater" activeClassName="nav-active-icon">
+                <div className="badge-div">
+                  <i
+                    class="fa fa-clock-o fa-lg badge-icons"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              </NavLink>
+            </li>
+            <li className="list-item-inline">
+              <NavLink to="/likedvideos" activeClassName="nav-active-icon">
+                <div className="badge-div">
+                  <i
+                    class="fa fa-thumbs-up fa-lg badge-icons"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              </NavLink>
+            </li>
+            <li className="list-item-inline">
+              <NavLink to="/" activeClassName="nav-active-icon">
+                <div className="badge-div">
+                  <i
+                    class="fa fa-user-circle-o fa-lg badge-icons"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   );

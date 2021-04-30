@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 import useHistory from "../context/history-context";
 import useVideos from "../context/videos-context";
+import Footer from "./Footer";
 function LandingPage() {
   let { historydispatch } = useHistory();
   let { videos } = useVideos();
@@ -12,8 +13,13 @@ function LandingPage() {
     <div className="landing-page-main">
       <NavBar />
       <SideBar />
+
       <div className="landing-page-div">
-        <div>
+        <div className="landing-page-vidoes videos">
+          <div className="footer-div">
+            <Footer />
+          </div>
+
           {videos &&
             videos.map((item) => {
               return (
