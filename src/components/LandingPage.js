@@ -2,9 +2,8 @@ import React from "react";
 import SideBar from "./SideBar";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
-import useVideos from "../context/videos-context";
 import useHistory from "../context/history-context";
-
+import useVideos from "../context/videos-context";
 function LandingPage() {
   let { history, historydispatch } = useHistory();
   let { videos } = useVideos();
