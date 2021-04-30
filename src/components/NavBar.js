@@ -1,8 +1,21 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import "./components.css";
-
+import useVideos from "../context/videos-context";
 function NavBar() {
+  const [searchText, setSearchText] = useState("");
+  const { videosdispatch } = useVideos();
+  const SearchVideos = () => {
+    videosdispatch({ TYPE: "SEARCH", PAYLOAD: searchText });
+  };
+
+  useEffect(() => {
+    videosdispatch({ TYPE: "SEARCH", PAYLOAD: searchText });
+    // return () => {
+    //   cleanup;
+    // };
+  }, [searchText]);
+
   return (
     <div>
       <nav className="navigation nav-ecom">
@@ -18,8 +31,9 @@ function NavBar() {
             name="search"
             placeholder="Search FitTube"
             className="input-search"
+            onChange={(e) => setSearchText(e.target.value)}
           />
-          <button className="input-search-btn">
+          <button className="input-search-btn" onClick={(e) => SearchVideos()}>
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </div>
