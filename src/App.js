@@ -12,14 +12,14 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/likedvideos" element={<LikedVideos />} />
         <Route path="/history" element={<History />} />
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/playvideo/:id" element={<PlayVideo />} />
         <Route path="/playlist" element={<Playlist />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
