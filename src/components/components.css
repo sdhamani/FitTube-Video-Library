@@ -483,9 +483,9 @@ playlist-compo */
 }
 
 @media screen and (max-width: 767px) {
-  .footer-div {
+  /* .footer-div {
     width: 100%;
-  }
+  } */
   .footer {
     position: fixed;
     left: 0;
