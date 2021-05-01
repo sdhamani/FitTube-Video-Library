@@ -97,7 +97,7 @@ body {
     margin: 0rem 0.7rem !important;
   }
   .input {
-    width: 44%;
+    width: 64%;
     margin: 1rem 0.1rem;
   }
   .nav-heading .fa {
@@ -319,7 +319,7 @@ body {
   }
 
   .videos {
-    width: 80%;
+    /* width: 80%; */
     display: flex;
     justify-content: center;
   }
@@ -493,7 +493,7 @@ playlist-compo */
     position: fixed;
     bottom: 0%;
     z-index: 1;
-    width: 80%;
+    width: 100%;
     background-color: white;
   }
   .footer .list-item-inline {
