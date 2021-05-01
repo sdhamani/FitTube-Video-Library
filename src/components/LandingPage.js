@@ -1,6 +1,5 @@
 import React from "react";
-import SideBar from "./SideBar";
-import NavBar from "./NavBar";
+
 import { Link } from "react-router-dom";
 import useHistory from "../context/history-context";
 import useVideos from "../context/videos-context";
@@ -12,17 +11,12 @@ function LandingPage() {
   console.log("videos", videos);
   return (
     <div className="landing-page-main">
-      <NavBar />
-      <SideBar />
-
       <div className="landing-page-div">
         <div>
           <ToggleVideos />
         </div>
         <div className="landing-page-vidoes videos">
-          <div className="footer-div">
-            <Footer />
-          </div>
+          <div className="footer-div">{/* <Footer /> */}</div>
 
           {videos &&
             videos.map((item) => {

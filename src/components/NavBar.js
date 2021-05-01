@@ -1,13 +1,20 @@
 import { React, useState, useEffect } from "react";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import "./components.css";
+import SideBar from "./SideBar";
 import useVideos from "../context/videos-context";
 function NavBar() {
   const [searchText, setSearchText] = useState("");
   const { videosdispatch } = useVideos();
+  const [hamDisplay, setHamDisplay] = useState(false);
+
   const SearchVideos = () => {
     videosdispatch({ TYPE: "SEARCH", PAYLOAD: searchText });
   };
+
+  function myFunction() {
+    setHamDisplay(!hamDisplay);
+  }
 
   useEffect(() => {
     videosdispatch({ TYPE: "SEARCH", PAYLOAD: searchText });
@@ -19,6 +26,16 @@ function NavBar() {
   return (
     <div>
       <nav className="navigation nav-ecom">
+        {hamDisplay && <SideBar />}
+        <div
+          className={hamDisplay ? "container change" : "container"}
+          id="ham-container"
+          onClick={() => myFunction()}
+        >
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+        </div>
         <Link className="link-no-decoration" to="/">
           <h1 className="nav-heading">
             <i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i>
