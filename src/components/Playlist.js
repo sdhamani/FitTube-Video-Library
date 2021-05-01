@@ -14,7 +14,6 @@ function Playlist() {
     <div>
       <NavBar />
       <div className="videos-div">
-        <SideBar />
         <div className="footer-div">
           <Footer />
         </div>
@@ -27,7 +26,7 @@ function Playlist() {
             </p>
           )}
         </div>
-        <div className="videos">
+        <div className="component-videos videos">
           {playlist &&
             playlist.map((item) => {
               return (

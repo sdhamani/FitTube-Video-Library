@@ -1,6 +1,5 @@
 import React from "react";
-import NavBar from "./NavBar";
-import SideBar from "./SideBar";
+
 import { Link } from "react-router-dom";
 import useLikedVideos from "../context/likevideos-context";
 import videos from "../data/videos";
@@ -13,9 +12,7 @@ function LikedVideos() {
   return (
     <div>
       {" "}
-      <NavBar />
       <div className="videos-div">
-        <SideBar />
         <div className="footer-div">
           <Footer />
         </div>
@@ -27,7 +24,7 @@ function LikedVideos() {
             </p>
           )}
         </div>
-        <div className="videos">
+        <div className="component-videos videos">
           {likdeVideosObj &&
             likdeVideosObj.map((item) => {
               return (

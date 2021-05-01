@@ -80,9 +80,8 @@ function PlayVideo() {
       {showModule && (
         <PlaylistModule showModule={showModule} setShowModule={setShowModule} />
       )}
-      <NavBar />
+
       <div className="playvideo-div">
-        <SideBar />
         <div className="footer-div">
           <Footer />
         </div>

@@ -1,6 +1,5 @@
 import React from "react";
-import NavBar from "./NavBar";
-import SideBar from "./SideBar";
+
 import videos from "../data/videos";
 import useHistory from "../context/history-context";
 import { Link } from "react-router-dom";
@@ -12,9 +11,7 @@ function History() {
   return (
     <div>
       {" "}
-      <NavBar />
       <div className="videos-div">
-        <SideBar />
         <div className="footer-div">
           <Footer />
         </div>
@@ -28,7 +25,7 @@ function History() {
           )}
         </div>
 
-        <div className="videos">
+        <div className="component-videos videos">
           {historyObj &&
             historyObj.map((item) => {
               return (

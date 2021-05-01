@@ -13,9 +13,7 @@ function WatchLater() {
   return (
     <div>
       {" "}
-      <NavBar />
       <div className="videos-div">
-        <SideBar />
         <div className="footer-div">
           <Footer />
         </div>
@@ -29,7 +27,7 @@ function WatchLater() {
           )}
         </div>
 
-        <div className="videos">
+        <div className=" component-videos  videos">
           {watchLaterObj &&
             watchLaterObj.map((item) => {
               return (
