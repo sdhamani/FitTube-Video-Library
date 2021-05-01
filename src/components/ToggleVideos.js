@@ -1,5 +1,6 @@
 import React from "react";
-import useVideos from "../context/videos-context";
+import allVideos from "../data/videos";
+
 import { useState } from "react";
 function ToggleVideos() {
   const [counter1, Setcounter1] = useState(1);
@@ -8,7 +9,7 @@ function ToggleVideos() {
   const [counter4, Setcounter4] = useState(4);
   const [counter5, Setcounter5] = useState(5);
 
-  let { videos } = useVideos();
+  let videos = allVideos;
 
   const leftCounter = (counter, Setcounter) => {
     console.log(counter);
@@ -54,8 +55,10 @@ function ToggleVideos() {
         <i class="fa  fa-2x fa-chevron-right" aria-hidden="true"></i>
       </button>
       <iframe
+        onSwipedRight={(e) => rightVideoHandler()}
+        onSwipedLeft={(e) => leftVideoHandler}
         className={`toggle-video-iframe-${counter1}`}
-        src={videos[6].videoLink}
+        src={videos[14].videoLink}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -87,7 +90,7 @@ function ToggleVideos() {
       ></iframe>
       <iframe
         className={`toggle-video-iframe-${counter5}`}
-        src={videos[0].videoLink}
+        src={videos[6].videoLink}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

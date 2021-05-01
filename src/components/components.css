@@ -23,11 +23,20 @@ body {
   align-items: flex-start;
   font-size: xx-large;
   font-style: normal;
-  margin-right: 8rem;
-  margin-left: 2rem;
+  margin-right: 6rem;
+  margin-left: 1.2rem;
 }
 .nav-heading .fa {
   margin: 0rem 0.5rem;
+}
+
+.container {
+  height: 2rem;
+  top: 0.1rem;
+  position: relative;
+  display: inline-block;
+  background-color: black;
+  width: 2rem;
 }
 
 .nav-half-heading {
@@ -69,10 +78,14 @@ body {
 }
 
 .navigation {
+  z-index: 12;
   justify-content: flex-start;
 }
 /* nav-var mobile */
 @media screen and (max-width: 767px) {
+  .container {
+    display: none;
+  }
   .nav-icons {
     display: none;
   }
@@ -84,7 +97,7 @@ body {
     margin: 0rem 0.7rem !important;
   }
   .input {
-    width: auto;
+    width: 35%;
     margin: 1rem 0.1rem;
   }
   .nav-heading .fa {
@@ -109,7 +122,8 @@ body {
     font-size: x-large;
   }
   .landing-page-main {
-    width: 100%;
+    display: flex;
+    justify-content: flex-start;
   }
   .list-item-inline a {
     margin: 0rem 2rem;
@@ -129,15 +143,30 @@ body {
 
 /* Side-bar */
 .action-bar {
-  margin: 0rem 0rem;
-  margin-top: 5rem;
-  margin-left: 0;
-  width: 15rem;
+  background-color: var(--background-color);
+  left: 0;
+  top: 6%;
+  position: fixed;
+  width: 14rem;
   border: none;
-  position: inherit;
-  display: inline-block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.action-bar-heading {
+  display: flex;
+}
+
+.action-bar-heading {
+  margin-left: 4rem;
+  font-size: xx-large;
+}
+.action-bar-half-heading {
+  font-size: xx-large;
 }
 .actions-div {
+  margin: 1rem 0rem;
+  height: 100vh;
   color: var(--primary-color);
   border: none;
 }
@@ -166,6 +195,9 @@ body {
 }
 
 .actions-types {
+  display: flex;
+  width: 100% !important;
+  width: 7rem;
   height: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -183,7 +215,6 @@ body {
 
 .landing-page-div {
   margin-top: 4.5rem;
-  width: 90%;
 }
 
 /* landing-page-videos */
@@ -198,14 +229,21 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.component-videos {
   justify-content: flex-start;
+  width: auto;
+  height: auto;
+  margin-top: 1rem !important;
 }
 
 .video {
   cursor: pointer;
   width: 15.5rem;
   display: inline-block;
-  margin: 0.5rem 0.8rem;
+  margin: 0.5rem 1.2rem;
 }
 
 .video-image {
@@ -238,13 +276,16 @@ body {
 
 .playvideo-div {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   flex-direction: row;
   margin: 0;
 }
 
 .playvideo {
-  margin: 5rem 0rem;
   width: 80%;
+  margin: 5rem 0rem;
 }
 .video-play-views {
   margin-right: 25rem;
@@ -263,7 +304,7 @@ body {
 }
 
 .video-iframe {
-  width: 90%;
+  width: 100%;
   height: 30rem;
 }
 
@@ -282,7 +323,7 @@ body {
   }
   .videos {
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
   }
   .video {
     margin: 0rem 0.3rem;
@@ -333,13 +374,12 @@ body {
 }
 
 .videos-div {
-  display: flex;
   width: 100%;
 }
 
 .page-heading {
-  width: 100%;
-  margin-top: 4rem;
+  display: block;
+  margin-top: 6rem;
 }
 .page-heading-head {
   margin-left: 1rem;
@@ -353,9 +393,9 @@ body {
 }
 
 .no-items {
-  width: 90%;
+  width: 80%;
   height: 2rem;
-  margin-top: 1rem;
+  margin: 1rem 1rem;
   box-shadow: 4px 2px #888888;
   padding: 2rem 1rem;
 }
@@ -369,7 +409,7 @@ body {
 
 .playlist-popup {
   position: absolute;
-  left: 45%;
+  left: 40%;
   top: 40%;
   width: 20%;
 
@@ -424,8 +464,7 @@ playlist-compo */
   display: block !important;
   width: 100%;
   height: 30%;
-  margin: 1rem 1rem;
-  padding: 1rem 1rem;
+  margin: 0rem 1rem;
 }
 
 .playlist-Name {
@@ -449,7 +488,7 @@ playlist-compo */
   .footer-div .footer {
     display: block;
     position: fixed;
-    bottom: 0;
+    bottom: 5%;
     z-index: 1;
     width: 100%;
     height: auto;
@@ -462,7 +501,6 @@ playlist-compo */
     padding: 0rem 0rem;
   }
   .footer .nav-list-ecom {
-    width: 100% !important;
     justify-content: space-evenly;
   }
 }
@@ -471,86 +509,61 @@ playlist-compo */
 toggle-vidoes */
 
 .toggle-vidoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 20rem;
   position: relative;
-}
-@media screen and (max-width: 767px) {
-  .toggle-vidoes {
-    display: none;
-  }
 }
 
 .toggle-video-iframe-3 {
   position: absolute;
   top: 6%;
-  left: 13%;
+  left: 15%;
   align-items: center;
   width: 70%;
   height: 18rem;
-  z-index: 11;
-  /* animation: video-frame3 1s ease-in-out; */
-}
-
-@keyframes video-frame3 {
-  from {
-    top: 46%;
-    right: 5%;
-  }
-  to {
-    top: 6%;
-    left: 13%;
-  }
+  z-index: 5;
 }
 
 .toggle-video-iframe-2 {
   position: absolute;
   top: 14%;
-  left: 8%;
+  left: 10%;
   width: 55%;
   height: 15rem;
-  z-index: 10;
-  /* animation: video-frame2 1s ease-in; */
+  z-index: 4;
 }
 
-@keyframes video-frame2 {
-  from {
-    top: 6%;
-    left: 13%;
-  }
-  to {
-    top: 14%;
-    left: 8%;
-  }
-}
 .toggle-video-iframe-1 {
   position: absolute;
   top: 26%;
-  left: 4%;
+  left: 6%;
   width: 45%;
   height: 10rem;
-  z-index: 9;
+  z-index: 3;
 }
 .toggle-video-iframe-4 {
   position: absolute;
   top: 14%;
-  left: 33%;
+  left: 35%;
   width: 55%;
   height: 15rem;
-  z-index: 10;
+  z-index: 4;
 }
 .toggle-video-iframe-5 {
   position: absolute;
   top: 26%;
-  left: 46%;
+  left: 48%;
   width: 45%;
   height: 10rem;
-  z-index: 9;
+  z-index: 3;
 }
 
 .toggle-left-btn {
   top: 46%;
-  left: 0.5%;
+  left: 3%;
   border: none;
   outline: none;
   background-color: white;
@@ -559,9 +572,35 @@ toggle-vidoes */
 
 .toggle-left-right {
   top: 46%;
-  right: 5%;
+  right: 4%;
   border: none;
   outline: none;
   background-color: white;
   position: absolute;
+}
+
+@media screen and (max-width: 767px) {
+  .toggle-vidoes {
+    width: 75%;
+    height: 13rem;
+  }
+  .toggle-video-iframe-3 {
+    width: 70%;
+    height: 10rem;
+  }
+  .toggle-video-iframe-2,
+  .toggle-video-iframe-4 {
+    width: 55%;
+    height: 8rem;
+  }
+  .toggle-video-iframe-1,
+  .toggle-video-iframe-5 {
+    width: 45%;
+    height: 5rem;
+  }
+  .toggle-left-btn {
+    font-size: small;
+    top: 40%;
+    left: 0%;
+  }
 }
