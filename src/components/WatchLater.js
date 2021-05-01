@@ -4,6 +4,7 @@ import SideBar from "./SideBar";
 import videos from "../data/videos";
 import { Link } from "react-router-dom";
 import useWatchLater from "../context/watchLater-context";
+import Footer from "./Footer";
 
 function WatchLater() {
   let { watchLater } = useWatchLater();
@@ -15,6 +16,10 @@ function WatchLater() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
+        <div className="footer-div">
+          <Footer />
+        </div>
+
         <div className="page-heading">
           <h1 className="page-heading-head">Watch Later</h1>
           {watchLater.length === 0 && (

@@ -8,6 +8,7 @@ import NavBar from "./NavBar";
 
 import usePlaylist from "../context/playlist-context";
 import { useState } from "react";
+import Footer from "./Footer";
 
 function PlaylistModule({ showModule, setShowModule }) {
   const createPlaylistFunc = (id, playlistName) => {
@@ -82,6 +83,9 @@ function PlayVideo() {
       <NavBar />
       <div className="playvideo-div">
         <SideBar />
+        <div className="footer-div">
+          <Footer />
+        </div>
         {video && (
           <div className="playvideo">
             <iframe

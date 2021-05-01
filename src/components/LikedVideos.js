@@ -4,6 +4,7 @@ import SideBar from "./SideBar";
 import { Link } from "react-router-dom";
 import useLikedVideos from "../context/likevideos-context";
 import videos from "../data/videos";
+import Footer from "./Footer";
 
 function LikedVideos() {
   let { likevideos } = useLikedVideos();
@@ -15,6 +16,9 @@ function LikedVideos() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
+        <div className="footer-div">
+          <Footer />
+        </div>
         <div className="page-heading">
           <h1 className="page-heading-head">Liked Videos</h1>
           {likevideos.length === 0 && (

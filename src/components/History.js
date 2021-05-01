@@ -4,6 +4,7 @@ import SideBar from "./SideBar";
 import videos from "../data/videos";
 import useHistory from "../context/history-context";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 function History() {
   let { history } = useHistory();
 
@@ -14,6 +15,10 @@ function History() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
+        <div className="footer-div">
+          <Footer />
+        </div>
+
         <div className="page-heading">
           <h1 className="page-heading-head">History</h1>
           {history.length === 0 && (

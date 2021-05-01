@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import videos from "../data/videos";
 import usePlaylist from "../context/playlist-context";
 import useHistory from "../context/history-context";
+import Footer from "./Footer";
 
 function Playlist() {
   let { playlist, playlistdispatch } = usePlaylist();
@@ -14,6 +15,10 @@ function Playlist() {
       <NavBar />
       <div className="videos-div">
         <SideBar />
+        <div className="footer-div">
+          <Footer />
+        </div>
+
         <div className="page-heading">
           <h1 className="page-heading-head">Playlist</h1>
           {playlist.length === 0 && (
