@@ -475,6 +475,11 @@ toggle-vidoes */
   height: 20rem;
   position: relative;
 }
+@media screen and (max-width: 767px) {
+  .toggle-vidoes {
+    display: none;
+  }
+}
 
 .toggle-video-iframe-1 {
   position: absolute;
