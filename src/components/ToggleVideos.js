@@ -44,38 +44,50 @@ function ToggleVideos() {
     rightCounter(counter4, Setcounter4);
     rightCounter(counter5, Setcounter5);
   };
+
+  const onSwipeStart = (e) => {
+    console.log("Start swiping...", e);
+  };
+
+  const onSwipeMove = (position, event) => {
+    console.log(`Moved ${position.x} pixels horizontally`, event);
+    console.log(`Moved ${position.y} pixels vertically`, event);
+  };
+
+  const onSwipeEnd = (event) => {
+    console.log("End swiping...", event);
+  };
+
   return (
-    <div className="toggle-vidoes">
-      <button className="toggle-left-btn" onClick={(e) => leftVideoHandler()}>
-        <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
-      </button>
-      <button
-        className="toggle-left-right"
-        onClick={(e) => rightVideoHandler()}
-      >
-        <i class="fa  fa-2x fa-chevron-right" aria-hidden="true"></i>
-      </button>
-      <div onTouchMove={(e) => rightVideoHandler()}>
-        <iframe
-          className={`toggle-video-iframe-${counter1}`}
-          src={videos[14].videoLink}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
-      <div onTouchMove={(e) => rightVideoHandler()}>
-        <iframe
-          className={`toggle-video-iframe-${counter1}`}
-          src={videos[14].videoLink}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>{" "}
-      </div>
-      <div onTouchMove={(e) => rightVideoHandler()}>
+    <Swipe
+      onSwipeStart={(e) => onSwipeStart(e)}
+      onSwipeMove={(e) => onSwipeMove(e)}
+      onSwipeEnd={(e) => onSwipeEnd(e)}
+      onSwipeRight={(e) => rightVideoHandler()}
+      onSwipeLeft={(e) => leftVideoHandler()}
+    >
+      <div className="toggle-vidoes">
+        <button className="toggle-left-btn" onClick={(e) => leftVideoHandler()}>
+          <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+        </button>
+        <button
+          className="toggle-left-right"
+          onClick={(e) => rightVideoHandler()}
+        >
+          <i class="fa  fa-2x fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div style={{ background_color: "blue" }}>
+          <iframe
+            className={`toggle-video-iframe-${counter1}`}
+            src={videos[14].videoLink}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>{" "}
+        </div>
+
         <iframe
           className={`toggle-video-iframe-${counter2}`}
           src={videos[7].videoLink}
@@ -84,8 +96,6 @@ function ToggleVideos() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-      </div>
-      <div onTouchMove={(e) => rightVideoHandler()}>
         <iframe
           className={`toggle-video-iframe-${counter3}`}
           src={videos[15].videoLink}
@@ -94,8 +104,6 @@ function ToggleVideos() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-      </div>
-      <div onTouchMove={(e) => rightVideoHandler()}>
         <iframe
           className={`toggle-video-iframe-${counter4}`}
           src={videos[13].videoLink}
@@ -104,8 +112,6 @@ function ToggleVideos() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-      </div>
-      <div onTouchMove={(e) => rightVideoHandler()}>
         <iframe
           className={`toggle-video-iframe-${counter5}`}
           src={videos[6].videoLink}
@@ -115,7 +121,7 @@ function ToggleVideos() {
           allowFullScreen
         ></iframe>
       </div>
-    </div>
+    </Swipe>
   );
 }
 
