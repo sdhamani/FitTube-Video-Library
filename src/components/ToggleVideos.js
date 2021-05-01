@@ -1,5 +1,6 @@
 import React from "react";
 import allVideos from "../data/videos";
+import Swipe from "react-easy-swipe";
 
 import { useState } from "react";
 function ToggleVideos() {
@@ -44,11 +45,7 @@ function ToggleVideos() {
     rightCounter(counter5, Setcounter5);
   };
   return (
-    <div
-      className="toggle-vidoes"
-      onSwipedRight={(e) => rightVideoHandler()}
-      onSwipedLeft={(e) => leftVideoHandler}
-    >
+    <div className="toggle-vidoes">
       <button className="toggle-left-btn" onClick={(e) => leftVideoHandler()}>
         <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
       </button>
@@ -58,46 +55,66 @@ function ToggleVideos() {
       >
         <i class="fa  fa-2x fa-chevron-right" aria-hidden="true"></i>
       </button>
-      <iframe
-        className={`toggle-video-iframe-${counter1}`}
-        src={videos[14].videoLink}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-      <iframe
-        className={`toggle-video-iframe-${counter2}`}
-        src={videos[7].videoLink}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-      <iframe
-        className={`toggle-video-iframe-${counter3}`}
-        src={videos[15].videoLink}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-      <iframe
-        className={`toggle-video-iframe-${counter4}`}
-        src={videos[13].videoLink}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-      <iframe
-        className={`toggle-video-iframe-${counter5}`}
-        src={videos[6].videoLink}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+      <div onTouchMove={(e) => rightVideoHandler()}>
+        <iframe
+          className={`toggle-video-iframe-${counter1}`}
+          src={videos[14].videoLink}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div onTouchMove={(e) => rightVideoHandler()}>
+        <iframe
+          className={`toggle-video-iframe-${counter1}`}
+          src={videos[14].videoLink}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>{" "}
+      </div>
+      <div onTouchMove={(e) => rightVideoHandler()}>
+        <iframe
+          className={`toggle-video-iframe-${counter2}`}
+          src={videos[7].videoLink}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div onTouchMove={(e) => rightVideoHandler()}>
+        <iframe
+          className={`toggle-video-iframe-${counter3}`}
+          src={videos[15].videoLink}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div onTouchMove={(e) => rightVideoHandler()}>
+        <iframe
+          className={`toggle-video-iframe-${counter4}`}
+          src={videos[13].videoLink}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div onTouchMove={(e) => rightVideoHandler()}>
+        <iframe
+          className={`toggle-video-iframe-${counter5}`}
+          src={videos[6].videoLink}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
     </div>
   );
 }
