@@ -182,7 +182,6 @@ body {
 }
 
 .landing-page-div {
-  display: flex;
   margin-top: 4.5rem;
   width: 90%;
 }
@@ -274,6 +273,10 @@ body {
   justify-content: space-evenly;
 }
 @media screen and (max-width: 767px) {
+  .video-content {
+    height: auto;
+  }
+
   .landing-page-div {
     width: auto;
   }
@@ -462,4 +465,104 @@ playlist-compo */
     width: 100% !important;
     justify-content: space-evenly;
   }
+}
+
+/* 
+toggle-vidoes */
+
+.toggle-vidoes {
+  width: 100%;
+  height: 20rem;
+  position: relative;
+}
+
+.toggle-video-iframe-1 {
+  position: absolute;
+  top: 6%;
+  left: 13%;
+  align-items: center;
+  width: 70%;
+  height: 18rem;
+  z-index: 11;
+  /* animation: video-frame1 1s ease-in-out; */
+}
+
+/* @keyframes video-frame1 {
+  from {
+    top: 6%;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    top: 14%;
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+
+.toggle-video-iframe-2 {
+  position: absolute;
+  top: 14%;
+  left: 8%;
+  width: 55%;
+  height: 15rem;
+  z-index: 10;
+  animation: video-frame2 2s ease-in;
+}
+
+@keyframes video-frame2 {
+  from {
+    top: 14%;
+    left: 8%;
+    opacity: 0;
+  }
+  to {
+    top: 6%;
+    left: 13%;
+    top: 14%;
+    left: 8%;
+    opacity: 1;
+  }
+}
+.toggle-video-iframe-3 {
+  position: absolute;
+  top: 26%;
+  left: 4%;
+  width: 45%;
+  height: 10rem;
+  z-index: 9;
+}
+.toggle-video-iframe-4 {
+  position: absolute;
+  top: 14%;
+  left: 33%;
+  width: 55%;
+  height: 15rem;
+  z-index: 10;
+}
+.toggle-video-iframe-5 {
+  position: absolute;
+  top: 26%;
+  left: 46%;
+  width: 45%;
+  height: 10rem;
+  z-index: 9;
+}
+
+.toggle-left-btn {
+  top: 46%;
+  left: 0.5%;
+  border: none;
+  outline: none;
+  background-color: white;
+  position: absolute;
+}
+
+.toggle-left-right {
+  top: 46%;
+  right: 5%;
+  border: none;
+  outline: none;
+  background-color: white;
+  position: absolute;
 }
