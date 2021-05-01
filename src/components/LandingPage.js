@@ -16,7 +16,9 @@ function LandingPage() {
           <ToggleVideos />
         </div>
         <div className="landing-page-vidoes videos">
-          <div className="footer-div">{/* <Footer /> */}</div>
+          <div className="footer-div">
+            <Footer />
+          </div>
 
           {videos &&
             videos.map((item) => {
