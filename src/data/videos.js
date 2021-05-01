@@ -1,32 +1,35 @@
 const allVideos = [
   {
-    id: "FT101",
-    name: "30-Minute HIIT Cardio - No Equipment at Home | SELF",
-    image:
-      "https://i.ytimg.com/vi/ml6cT4AZdqI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2Yakf4nieopGux521AsbN50n9ig",
-    videoLink: "https://www.youtube.com/embed/ml6cT4AZdqI",
-    channel: "SELF",
+    id: "FT143",
+    name: "20 MIN FULL BODY WORKOUT",
+    image: "https://img.youtube.com/vi/UBMk30rjy0o/maxresdefault.jpg",
+    videoLink: "https://www.youtube.com/embed/UBMk30rjy0o",
+    channel: "Pamela Reif",
+    views: "43M views",
+    uploaded: "2 years ago",
+    cateogory: "Home Workout",
+  },
+  {
+    id: "FT156",
+    name: "BURN FAT FAST From Home | No Equipment",
+    image: "https://img.youtube.com/vi/jzUpUe29lXI/maxresdefault.jpg",
+    videoLink: "https://www.youtube.com/embed/jzUpUe29lXI",
+    channel: "CHRIS HERIA",
+    views: "1M views",
+    uploaded: "1 years ago",
+    cateogory: "fat burning",
+  },
+  {
+    id: "FT146",
+    name: "Easy Yoga Class for Athletes to Boost Recovery",
+    image: "https://img.youtube.com/vi/rsuO6K2RUtI/maxresdefault.jpg",
+    videoLink: "https://www.youtube.com/embed/rsuO6K2RUtI",
+    channel: "Breathe&Flow",
+    views: "364K views",
+    uploaded: "1 years ago",
+    cateogory: "yoga",
   },
 
-  {
-    id: "FT104",
-    name: "30-Minute Bodyweight Abs Workout - HIIT Cardio At Home | SELF",
-    image:
-      "https://i.ytimg.com/vi/YJVtJMIQmkU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCDdxIbB4cmd_yL8djITaMAbO74yg",
-    videoLink:
-      "https://www.youtube.com/embed/YJVtJMIQmkU?list=PL7Ax6CP9_hgOYc7jvUgz6ClmBh3DHdwu9",
-    channel: "SELF",
-  },
-  {
-    id: "FT141",
-    name: "No Gym Full Chest Workout At Home",
-    image: "https://img.youtube.com/vi/qml_YVfm0z0/sddefault.jpg",
-    videoLink: "https://www.youtube.com/embed/qml_YVfm0z0",
-    channel: "Yash Anand",
-    views: "28M views",
-    uploaded: "1 years ago",
-    cateogory: "Home workout",
-  },
   {
     id: "FT142",
     name: "Day 1 | 30 Minute at Home Strength Workout | Clutch Life",
@@ -38,15 +41,14 @@ const allVideos = [
     cateogory: "gym",
   },
   {
-    id: "FT143",
-    name: "20 MIN FULL BODY WORKOUT",
-    image: "https://img.youtube.com/vi/UBMk30rjy0o/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/UBMk30rjy0o",
-    channel: "Pamela Reif",
-    views: "43M views",
-    uploaded: "2 years ago",
-    cateogory: "Home Workout",
+    id: "FT101",
+    name: "30-Minute HIIT Cardio - No Equipment at Home | SELF",
+    image:
+      "https://i.ytimg.com/vi/ml6cT4AZdqI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2Yakf4nieopGux521AsbN50n9ig",
+    videoLink: "https://www.youtube.com/embed/ml6cT4AZdqI",
+    channel: "SELF",
   },
+
   {
     id: "FT144",
     name: " Min Daily Yoga Routine for Beginners",
@@ -67,16 +69,7 @@ const allVideos = [
     uploaded: "1 years ago",
     cateogory: "yoga",
   },
-  {
-    id: "FT146",
-    name: "Easy Yoga Class for Athletes to Boost Recovery",
-    image: "https://img.youtube.com/vi/rsuO6K2RUtI/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/rsuO6K2RUtI",
-    channel: "Breathe&Flow",
-    views: "364K views",
-    uploaded: "1 years ago",
-    cateogory: "yoga",
-  },
+
   {
     id: "FT147",
     name: "30-Minute STRONG by Zumba® Cardio and Full-Body Toning Workout",
@@ -169,14 +162,23 @@ const allVideos = [
     cateogory: "fat burning",
   },
   {
-    id: "FT156",
-    name: "BURN FAT FAST From Home | No Equipment",
-    image: "https://img.youtube.com/vi/jzUpUe29lXI/maxresdefault.jpg",
-    videoLink: "https://www.youtube.com/embed/jzUpUe29lXI",
-    channel: "CHRIS HERIA",
-    views: "1M views",
+    id: "FT104",
+    name: "30-Minute Bodyweight Abs Workout - HIIT Cardio At Home | SELF",
+    image:
+      "https://i.ytimg.com/vi/YJVtJMIQmkU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCDdxIbB4cmd_yL8djITaMAbO74yg",
+    videoLink:
+      "https://www.youtube.com/embed/YJVtJMIQmkU?list=PL7Ax6CP9_hgOYc7jvUgz6ClmBh3DHdwu9",
+    channel: "SELF",
+  },
+  {
+    id: "FT141",
+    name: "No Gym Full Chest Workout At Home",
+    image: "https://img.youtube.com/vi/qml_YVfm0z0/sddefault.jpg",
+    videoLink: "https://www.youtube.com/embed/qml_YVfm0z0",
+    channel: "Yash Anand",
+    views: "28M views",
     uploaded: "1 years ago",
-    cateogory: "fat burning",
+    cateogory: "Home workout",
   },
 ];
 
