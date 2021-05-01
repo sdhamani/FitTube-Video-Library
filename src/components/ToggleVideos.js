@@ -44,7 +44,11 @@ function ToggleVideos() {
     rightCounter(counter5, Setcounter5);
   };
   return (
-    <div className="toggle-vidoes">
+    <div
+      className="toggle-vidoes"
+      onSwipedRight={(e) => rightVideoHandler()}
+      onSwipedLeft={(e) => leftVideoHandler}
+    >
       <button className="toggle-left-btn" onClick={(e) => leftVideoHandler()}>
         <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
       </button>
@@ -55,8 +59,6 @@ function ToggleVideos() {
         <i class="fa  fa-2x fa-chevron-right" aria-hidden="true"></i>
       </button>
       <iframe
-        onSwipedRight={(e) => rightVideoHandler()}
-        onSwipedLeft={(e) => leftVideoHandler}
         className={`toggle-video-iframe-${counter1}`}
         src={videos[14].videoLink}
         title="YouTube video player"
