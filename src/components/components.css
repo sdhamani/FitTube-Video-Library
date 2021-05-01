@@ -97,7 +97,7 @@ body {
     margin: 0rem 0.7rem !important;
   }
   .input {
-    width: 35%;
+    width: 40%;
     margin: 1rem 0.1rem;
   }
   .nav-heading .fa {
@@ -319,7 +319,7 @@ body {
   }
 
   .videos {
-    width: 100%;
+    width: 70%;
   }
   .video {
     width: 69%;
@@ -482,14 +482,15 @@ playlist-compo */
 
 @media screen and (max-width: 767px) {
   .footer-div {
-    width: 100%;
+    width: 70%;
   }
   .footer-div .footer {
+    left: 0;
     display: block;
     position: fixed;
     bottom: 5%;
     z-index: 1;
-    width: 100%;
+    width: 70%;
     height: auto;
     background-color: white;
   }
@@ -584,22 +585,27 @@ toggle-vidoes */
     height: 13rem;
   }
   .toggle-video-iframe-3 {
-    width: 70%;
+    width: 40%;
     height: 10rem;
   }
   .toggle-video-iframe-2,
   .toggle-video-iframe-4 {
-    width: 55%;
+    width: 25%;
     height: 8rem;
   }
   .toggle-video-iframe-1,
   .toggle-video-iframe-5 {
-    width: 45%;
+    width: 17%;
     height: 5rem;
   }
   .toggle-left-btn {
     font-size: small;
     top: 40%;
     left: 0%;
+  }
+  .toggle-left-right {
+    font-size: small;
+    top: 40%;
+    right: 30%;
   }
 }
