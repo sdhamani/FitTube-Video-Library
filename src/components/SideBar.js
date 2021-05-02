@@ -2,14 +2,17 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 
-function SideBar({ setHamDisplay, myFunction }) {
+function SideBar({ hamDisplay, setHamDisplay }) {
   return (
     <div className="action-bar">
       <div className="actions-div">
         <hr></hr>
         <nav>
           <br></br>
-          <div className="actions-types">
+          <div
+            className="actions-types"
+            onClick={(e) => setHamDisplay(!hamDisplay)}
+          >
             <NavLink
               className="link-no-decoration"
               activeClassName="nav-active-icon"
@@ -19,7 +22,10 @@ function SideBar({ setHamDisplay, myFunction }) {
               <label className="sidebar-label">Home</label>
             </NavLink>
           </div>
-          <div className="actions-types">
+          <div
+            className="actions-types"
+            onClick={(e) => setHamDisplay(!hamDisplay)}
+          >
             <NavLink
               activeClassName="nav-active-icon"
               className="link-no-decoration"

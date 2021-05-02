@@ -26,7 +26,9 @@ function NavBar() {
   return (
     <div>
       <nav className="navigation nav-ecom">
-        {hamDisplay && <SideBar />}
+        {hamDisplay && (
+          <SideBar hamDisplay={hamDisplay} setHamDisplay={setHamDisplay} />
+        )}
         <div
           className={hamDisplay ? "container change" : "container"}
           id="ham-container"
