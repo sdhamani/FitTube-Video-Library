@@ -12,9 +12,9 @@ function LandingPage() {
   return (
     <div className="landing-page-main">
       <div className="landing-page-div">
-        <div>
+        {/* <div>
           <ToggleVideos />
-        </div>
+        </div> */}
         <div className="landing-page-vidoes videos">
           <div className="footer-div">
             <Footer />

@@ -40,7 +40,7 @@ function NavBar() {
         </div>
         <Link className="link-no-decoration" to="/">
           <h1 className="nav-heading">
-            <i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i>
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
             Fit<small className="nav-half-heading">Tube</small>
           </h1>
         </Link>
