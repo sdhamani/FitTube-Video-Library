@@ -120,6 +120,9 @@ function ToggleVideos() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
+        <div className="toggle-swipe">
+          <i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i>
+        </div>
       </div>
     </Swipe>
   );
