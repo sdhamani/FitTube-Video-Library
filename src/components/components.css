@@ -97,6 +97,7 @@ body {
     margin: 0rem 0.7rem !important;
   }
   .input {
+    width: 60%;
     height: 2rem;
     margin: 1rem 0.1rem;
     margin-left: 2rem;
@@ -106,14 +107,14 @@ body {
   }
 
   .input button {
-    width: 12%;
+    width: 10%;
     height: auto;
     padding: 0.5rem 0rem;
   }
   .input-search {
     font-size: large;
     padding: 0.1rem 0.1rem;
-    width: 80%;
+    width: 89%;
     margin: 0rem 0rem;
   }
 
@@ -324,12 +325,13 @@ body {
   }
 
   .videos {
-    /* width: 80%; */
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .video {
-    width: 58%;
+    width: 88%;
     margin: 0rem 1rem;
     height: auto;
   }
