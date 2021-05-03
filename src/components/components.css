@@ -97,19 +97,21 @@ body {
     margin: 0rem 0.7rem !important;
   }
   .input {
-    width: 60%;
+    display: flex;
+
+    width: 55%;
     height: 2rem;
     margin: 1rem 0.1rem;
-    margin-left: 2rem;
   }
   .nav-heading .fa {
     margin: 0rem 0.2rem;
   }
 
   .input button {
-    width: 10%;
+    width: 12%;
     height: auto;
-    padding: 0.5rem 0rem;
+    justify-content: flex-end;
+    padding: 0.55rem 0rem;
   }
   .input-search {
     font-size: large;
@@ -119,18 +121,23 @@ body {
   }
 
   .nav-heading {
-    margin: 0rem 1rem;
-    font-size: large;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 0rem 0.5rem;
+    font-size: 1.2rem;
   }
   .nav-half-heading {
     margin: 0rem 0.1rem;
-    font-size: large;
+    font-size: 1.1rem;
   }
 
   .list-item-inline a {
     margin: 0rem 2rem;
   }
   .nav-ecom {
+    display: flex;
+    justify-content: space-evenly;
     width: 100%;
   }
   .nav-pills {
@@ -600,29 +607,29 @@ toggle-vidoes */
     height: 13rem;
   }
   .toggle-video-iframe-3 {
-    left: 10%;
+    left: 18%;
     width: 60%;
     height: 10rem;
   }
   .toggle-video-iframe-2 {
-    left: 7%;
+    left: 15%;
     width: 45%;
     height: 8rem;
   }
 
   .toggle-video-iframe-4 {
-    left: 29%;
+    left: 37%;
     width: 45%;
     height: 8rem;
   }
   .toggle-video-iframe-1 {
-    left: 4%;
+    left: 12%;
     width: 35.5%;
     height: 5rem;
   }
 
   .toggle-video-iframe-5 {
-    left: 42%;
+    left: 49.5%;
     width: 35.5%;
     height: 5rem;
   }
@@ -634,7 +641,7 @@ toggle-vidoes */
   .toggle-vidoes .toggle-swipe {
     position: absolute;
     bottom: 4%;
-    left: 44%;
+    left: 46%;
     display: block;
   }
 }
