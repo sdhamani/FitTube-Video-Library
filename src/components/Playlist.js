@@ -6,10 +6,22 @@ import videos from "../data/videos";
 import usePlaylist from "../context/playlist-context";
 import useHistory from "../context/history-context";
 import Footer from "./Footer";
+import { useState } from "react";
 
 function Playlist() {
   let { playlist, playlistdispatch } = usePlaylist();
   let { history, historydispatch } = useHistory();
+  let [showplay, setShowPlay] = useState([]);
+
+  const toggleShowPlaylist = (id) => {
+    if (showplay.includes(id)) {
+      const newArray = showplay.filter((item) => item !== id);
+      setShowPlay(newArray);
+    } else {
+      const newArray = [...showplay, id];
+      setShowPlay(newArray);
+    }
+  };
   return (
     <div>
       <NavBar />
@@ -31,46 +43,61 @@ function Playlist() {
             playlist.map((item) => {
               return (
                 <div className="single-playlist">
-                  <div className="playlist-Name">{item.name}</div>
-                  <div classname="videos">
-                    {item.id.map((item) => {
-                      const videoObj = videos.find(
-                        (value) => value.id === item
-                      );
-                      return (
-                        <div
-                          className="video"
-                          onClick={(e) =>
-                            historydispatch({
-                              type: "ADDTOHISTORY",
-                              payload: videoObj.id,
-                            })
-                          }
-                        >
-                          <Link
-                            className="landing-page-videos"
-                            to={`/playvideo/${videoObj.id}`}
-                          >
-                            <img
-                              className="video-image"
-                              src={videoObj.image}
-                              alt="NA"
-                            />
-
-                            <div className="video-content">
-                              <div className="video-name">{videoObj.name}</div>
-                              <div className="video-channel">
-                                {videoObj.channel}
-                              </div>
-                              <div className="video-channel">
-                                31M views 2 years ago
-                              </div>
-                            </div>
-                          </Link>
-                        </div>
-                      );
-                    })}
+                  <div
+                    className="playlist-Name"
+                    onClick={(e) => {
+                      toggleShowPlaylist(item.playlistId);
+                    }}
+                  >
+                    <i
+                      className="fa fa-angle-double-right"
+                      aria-hidden="true"
+                    ></i>
+                    {item.name}
                   </div>
+                  {showplay.includes(item.playlistId) && (
+                    <div className="videos">
+                      {item.id.map((item) => {
+                        const videoObj = videos.find(
+                          (value) => value.id === item
+                        );
+                        return (
+                          <div
+                            className="video"
+                            onClick={(e) =>
+                              historydispatch({
+                                type: "ADDTOHISTORY",
+                                payload: videoObj.id,
+                              })
+                            }
+                          >
+                            <Link
+                              className="landing-page-videos"
+                              to={`/playvideo/${videoObj.id}`}
+                            >
+                              <img
+                                className="video-image"
+                                src={videoObj.image}
+                                alt="NA"
+                              />
+
+                              <div className="video-content">
+                                <div className="video-name">
+                                  {videoObj.name}
+                                </div>
+                                <div className="video-channel">
+                                  {videoObj.channel}
+                                </div>
+                                <div className="video-channel">
+                                  31M views 2 years ago
+                                </div>
+                              </div>
+                            </Link>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               );
             })}

@@ -58,11 +58,11 @@ body {
 .input {
   border: 0.5px solid var(--primary-color);
   border-radius: 0.3rem;
-  width: 45%;
+  width: 40%;
   background-color: var(background-color);
 }
 .input-search {
-  width: 70%;
+  width: 88%;
   padding: 0.3rem 0.3rem;
   border: none;
   outline: none;
@@ -253,7 +253,7 @@ body {
   cursor: pointer;
   width: 15.5rem;
   display: inline-block;
-  margin: 0.5rem 1.2rem;
+  margin: 0.5rem 1rem;
 }
 
 .video-image {
@@ -451,10 +451,6 @@ body {
   align-items: center;
 }
 
-.playlist-name {
-  padding: 0.4rem 0.2rem;
-}
-
 @media screen and (max-width: 767px) {
   .playlist-popup {
     left: 23%;
@@ -476,18 +472,30 @@ playlist-compo */
   display: block !important;
   width: 100%;
   height: 30%;
-  margin: 0rem 1rem;
+  margin: 0rem 2rem;
 }
 
 .playlist-Name {
   font-size: x-large;
   display: block;
+  padding: 0.2rem 0.2rem;
+  margin: 0.3rem 0.2rem;
+}
+
+.playlist-Name .fa {
+  margin: 0rem 0.5rem;
 }
 
 .screen-header {
   display: block;
   margin-top: 5rem;
   margin-left: 5rem;
+}
+
+.single-playlist .videos {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem 1rem;
 }
 
 /* footer */
@@ -641,7 +649,7 @@ toggle-vidoes */
   .toggle-vidoes .toggle-swipe {
     position: absolute;
     bottom: 4%;
-    left: 46%;
+    left: 45%;
     display: block;
   }
 }
