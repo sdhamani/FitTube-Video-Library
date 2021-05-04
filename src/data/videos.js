@@ -47,6 +47,7 @@ const allVideos = [
       "https://i.ytimg.com/vi/ml6cT4AZdqI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2Yakf4nieopGux521AsbN50n9ig",
     videoLink: "https://www.youtube.com/embed/ml6cT4AZdqI",
     channel: "SELF",
+    cateogory: "Home Workout",
   },
 
   {
@@ -168,7 +169,7 @@ const allVideos = [
       "https://i.ytimg.com/vi/YJVtJMIQmkU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCDdxIbB4cmd_yL8djITaMAbO74yg",
     videoLink:
       "https://www.youtube.com/embed/YJVtJMIQmkU?list=PL7Ax6CP9_hgOYc7jvUgz6ClmBh3DHdwu9",
-    channel: "SELF",
+    channel: "Home Workout",
   },
   {
     id: "FT141",
