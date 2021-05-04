@@ -35,7 +35,10 @@ function SideBar({ hamDisplay, setHamDisplay }) {
               <label className="sidebar-label">History</label>
             </NavLink>
           </div>
-          <div className="actions-types">
+          <div
+            className="actions-types"
+            onClick={(e) => setHamDisplay(!hamDisplay)}
+          >
             <NavLink
               className="link-no-decoration"
               activeClassName="nav-active-icon"
@@ -48,7 +51,10 @@ function SideBar({ hamDisplay, setHamDisplay }) {
               <label className="sidebar-label">Playlist</label>
             </NavLink>
           </div>
-          <div className="actions-types">
+          <div
+            className="actions-types"
+            onClick={(e) => setHamDisplay(!hamDisplay)}
+          >
             <NavLink
               className="link-no-decoration"
               activeClassName="nav-active-icon"
@@ -58,7 +64,10 @@ function SideBar({ hamDisplay, setHamDisplay }) {
               <label className="sidebar-label">Watch Later</label>
             </NavLink>
           </div>
-          <div className="actions-types">
+          <div
+            className="actions-types"
+            onClick={(e) => setHamDisplay(!hamDisplay)}
+          >
             <NavLink className="link-no-decoration" to="/likedvideos">
               <i
                 class="fa fa-thumbs-up fa-lg badge-icons"
