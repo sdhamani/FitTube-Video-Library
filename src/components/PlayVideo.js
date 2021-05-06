@@ -16,7 +16,7 @@ function PlaylistModule({ showModule, setShowModule }) {
   };
   const { id } = useParams();
   let { playlist, playlistdispatch } = usePlaylist();
-  const [playlistName, setPlaylistName] = useState();
+  const [playlistName, setPlaylistName] = useState("");
 
   return (
     <div className="playlist-popup">
@@ -28,25 +28,27 @@ function PlaylistModule({ showModule, setShowModule }) {
           aria-hidden="true"
         ></i>
       </div>
-      {playlist &&
-        playlist.map((item) => {
-          return (
-            <div>
-              <input
-                className="playlist-radio"
-                type="checkbox"
-                onChange={(e) =>
-                  playlistdispatch({
-                    TYPE: "TOGGLE",
-                    PAYLOAD: { id, playlistName: item.name },
-                  })
-                }
-                checked={item.id.includes(id)}
-              />
-              <small className="playlist-name">{item.name}</small>
-            </div>
-          );
-        })}
+      <div className="playlist-names">
+        {playlist &&
+          playlist.map((item) => {
+            return (
+              <div className="playlist-name">
+                <input
+                  className="playlist-radio"
+                  type="checkbox"
+                  onChange={(e) =>
+                    playlistdispatch({
+                      TYPE: "TOGGLE",
+                      PAYLOAD: { id, playlistName: item.name },
+                    })
+                  }
+                  checked={item.id.includes(id)}
+                />
+                <small>{item.name}</small>
+              </div>
+            );
+          })}
+      </div>
       <input
         name="playlist-name"
         onChange={(e) => setPlaylistName(e.target.value)}
@@ -57,6 +59,7 @@ function PlaylistModule({ showModule, setShowModule }) {
       <button
         className="create-playlist-btn"
         onClick={(e) => createPlaylistFunc(id, playlistName)}
+        disabled={playlistName.length === 0}
       >
         Create
       </button>

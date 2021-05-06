@@ -8,7 +8,6 @@ export default function usePlaylist() {
 }
 
 export function PlaylistProvider({ children }) {
-  // const { videos } = useVideos();
   const AddToPlaylist = (state, playlistName, id) => {
     console.log("Add", state);
     return state.map((item) => {
@@ -48,8 +47,8 @@ export function PlaylistProvider({ children }) {
   };
 
   const playlistdisptachFun = (state, value) => {
-    let { id, playlistName } = value.PAYLOAD;
-    console.log(state);
+    let { id, playlistName, videoId } = value.PAYLOAD;
+    console.log("playlist", state);
     switch (value.TYPE) {
       case "CREATE":
         return state && state.find((item) => item.name === playlistName)
@@ -57,6 +56,21 @@ export function PlaylistProvider({ children }) {
           : CreatePlaylist(state, playlistName, id);
       case "TOGGLE":
         return TogglePlaylistVideo(state, playlistName, id);
+      case "REMOVE":
+        console.log("videoId", videoId);
+        console.log("Id", id);
+        return state.map((playlist) => {
+          if (playlist.playlistId === id) {
+            const UpdatedPlaylist = playlist.id.filter(
+              (item) => item !== videoId
+            );
+            console.log({ UpdatedPlaylist });
+
+            playlist.id = UpdatedPlaylist;
+          }
+          return playlist;
+        });
+
       default:
         return state;
     }
@@ -102,7 +116,7 @@ export function PlaylistProvider({ children }) {
     },
     {
       playlistId: 7,
-      name: "Gym Workouts",
+      name: "Gym Workout",
       id: getId("gym"),
     },
   ];

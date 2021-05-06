@@ -12,6 +12,7 @@ function Playlist() {
   let { playlist, playlistdispatch } = usePlaylist();
   let { history, historydispatch } = useHistory();
   let [showplay, setShowPlay] = useState([]);
+  let [editplaylist, setEditPlaylist] = useState(false);
 
   const toggleShowPlaylist = (id) => {
     if (showplay.includes(id)) {
@@ -43,59 +44,79 @@ function Playlist() {
             playlist.map((item) => {
               return (
                 <div className="single-playlist">
-                  <div
-                    className="playlist-Name"
-                    onClick={(e) => {
-                      toggleShowPlaylist(item.playlistId);
-                    }}
-                  >
-                    <i
-                      className="fa fa-angle-double-right"
-                      aria-hidden="true"
-                    ></i>
-                    {item.name}
-                  </div>
-                  {showplay.includes(item.playlistId) && (
-                    <div className="videos">
-                      {item.id.map((item) => {
-                        const videoObj = videos.find(
-                          (value) => value.id === item
-                        );
-                        return (
-                          <div
-                            className="video"
-                            onClick={(e) =>
-                              historydispatch({
-                                type: "ADDTOHISTORY",
-                                payload: videoObj.id,
-                              })
-                            }
-                          >
-                            <Link
-                              className="landing-page-videos"
-                              to={`/playvideo/${videoObj.id}`}
-                            >
-                              <img
-                                className="video-image"
-                                src={videoObj.image}
-                                alt="NA"
-                              />
+                  {item.id.length > 0 && (
+                    <div className="single-playlist">
+                      <div
+                        className="playlist-Name"
+                        onClick={(e) => {
+                          toggleShowPlaylist(item.playlistId);
+                        }}
+                      >
+                        <i
+                          className="fa fa-angle-double-right"
+                          aria-hidden="true"
+                        ></i>
+                        {item.name}
+                      </div>
+                      {showplay.includes(item.playlistId) && (
+                        <div className="videos">
+                          {item.id.map((item1) => {
+                            const videoObj = videos.find(
+                              (value) => value.id === item1
+                            );
+                            return (
+                              <div
+                                className="video"
+                                onClick={(e) =>
+                                  historydispatch({
+                                    type: "ADDTOHISTORY",
+                                    payload: videoObj.id,
+                                  })
+                                }
+                              >
+                                <div
+                                  onClick={(e) => {
+                                    playlistdispatch({
+                                      TYPE: "REMOVE",
+                                      PAYLOAD: {
+                                        id: item.playlistId,
+                                        videoId: videoObj.id,
+                                      },
+                                    });
+                                  }}
+                                >
+                                  <i
+                                    class="fa fa-times playlist-delete"
+                                    aria-hidden="true"
+                                  ></i>
+                                </div>
+                                <Link
+                                  className="landing-page-videos"
+                                  to={`/playvideo/${videoObj.id}`}
+                                >
+                                  <img
+                                    className="video-image"
+                                    src={videoObj.image}
+                                    alt="NA"
+                                  />
 
-                              <div className="video-content">
-                                <div className="video-name">
-                                  {videoObj.name}
-                                </div>
-                                <div className="video-channel">
-                                  {videoObj.channel}
-                                </div>
-                                <div className="video-channel">
-                                  31M views 2 years ago
-                                </div>
+                                  <div className="video-content">
+                                    <div className="video-name">
+                                      {videoObj.name}
+                                    </div>
+                                    <div className="video-channel">
+                                      {videoObj.channel}
+                                    </div>
+                                    <div className="video-channel">
+                                      31M views 2 years ago
+                                    </div>
+                                  </div>
+                                </Link>
                               </div>
-                            </Link>
-                          </div>
-                        );
-                      })}
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
