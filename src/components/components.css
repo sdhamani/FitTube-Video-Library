@@ -60,7 +60,8 @@ body {
   border-radius: 0.3rem;
   width: 40%;
   background-color: var(background-color);
-  margin: 0rem 5rem;
+  margin-left: 2rem;
+  margin-right: 8rem;
 }
 .input-search {
   width: 88%;
