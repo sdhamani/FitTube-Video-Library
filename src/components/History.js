@@ -39,7 +39,10 @@ function History() {
                     <div className="video-content">
                       <div className="video-name">{item.name}</div>
                       <div className="video-channel">{item.channel}</div>
-                      <div className="video-channel">31M views 2 years ago</div>
+                      <div className="video-channel">
+                        {" "}
+                        {item.views} {item.uploaded}
+                      </div>
                     </div>
                   </Link>
                 </div>

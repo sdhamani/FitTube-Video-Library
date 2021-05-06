@@ -108,7 +108,7 @@ function Playlist() {
                                       {videoObj.channel}
                                     </div>
                                     <div className="video-channel">
-                                      31M views 2 years ago
+                                      {videoObj.views} {videoObj.uploaded}
                                     </div>
                                   </div>
                                 </Link>

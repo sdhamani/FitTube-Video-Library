@@ -103,7 +103,10 @@ function PlayVideo() {
               <div className="video-play-actions">
                 <div className="video-play-views">
                   <div className="video-channel">{video.channel}</div>
-                  <div className="video-channel">31M views 2 years ago</div>
+                  <div className="video-channel">
+                    {" "}
+                    {video.views} {video.uploaded}
+                  </div>
                 </div>
                 <div className="video-play-actions-icons">
                   <div>
