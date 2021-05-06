@@ -13,7 +13,6 @@ function ToggleVideos() {
   let videos = allVideos;
 
   const leftCounter = (counter, Setcounter) => {
-    console.log(counter);
     if (counter === 1) {
       Setcounter(5);
     } else {
@@ -21,7 +20,6 @@ function ToggleVideos() {
     }
   };
   const rightCounter = (counter, Setcounter) => {
-    console.log(counter, Setcounter);
     if (counter === 5) {
       Setcounter(1);
     } else {
@@ -45,24 +43,8 @@ function ToggleVideos() {
     rightCounter(counter5, Setcounter5);
   };
 
-  const onSwipeStart = (e) => {
-    console.log("Start swiping...", e);
-  };
-
-  const onSwipeMove = (position, event) => {
-    console.log(`Moved ${position.x} pixels horizontally`, event);
-    console.log(`Moved ${position.y} pixels vertically`, event);
-  };
-
-  const onSwipeEnd = (event) => {
-    console.log("End swiping...", event);
-  };
-
   return (
     <Swipe
-      onSwipeStart={(e) => onSwipeStart(e)}
-      onSwipeMove={(e) => onSwipeMove(e)}
-      onSwipeEnd={(e) => onSwipeEnd(e)}
       onSwipeRight={(e) => rightVideoHandler()}
       onSwipeLeft={(e) => leftVideoHandler()}
     >

@@ -46,16 +46,6 @@ function Footer() {
             </div>
           </NavLink>
         </li>
-        {/* <li className="list-item-inline">
-          <NavLink to="/" activeClassName="nav-active-icon">
-            <div className="badge-div">
-              <i
-                class="fa fa-user-circle-o fa-lg badge-icons"
-                aria-hidden="true"
-              ></i>
-            </div>
-          </NavLink>
-        </li> */}
       </ul>
     </div>
   );

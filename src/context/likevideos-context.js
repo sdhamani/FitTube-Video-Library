@@ -8,7 +8,6 @@ export default function useLikedVideos() {
 
 export function LikedVideosProvider({ children }) {
   const dispatchfunc = (state, value) => {
-    console.log({ state }, { value });
     let isVideoLiked = state.find((item) => item === value.payload);
     switch (value.type) {
       case "LIKE":

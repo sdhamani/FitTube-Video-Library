@@ -8,8 +8,6 @@ export default function useHistory() {
 
 export function HistoryProvider({ children }) {
   const dispatchfunc = (state, value) => {
-    console.log({ state }, { value });
-    let inhistory = state.find((item) => item === value.payload);
     switch (value.type) {
       case "ADDTOHISTORY":
         return [...state, value.payload];

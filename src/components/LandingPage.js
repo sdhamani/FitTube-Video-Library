@@ -8,7 +8,6 @@ import ToggleVideos from "./ToggleVideos";
 function LandingPage() {
   let { historydispatch } = useHistory();
   let { videos } = useVideos();
-  console.log("videos", videos);
   return (
     <div className="landing-page-main">
       <div className="landing-page-div">
