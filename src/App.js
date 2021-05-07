@@ -1,4 +1,3 @@
-import "./App.css";
 import NavBar from "./components/NavBar";
 import LandingPage from "./components/LandingPage";
 import PlayVideo from "./components/PlayVideo";
