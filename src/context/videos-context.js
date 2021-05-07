@@ -12,7 +12,6 @@ export function VideosProvider({ children }) {
     const searchText = value.PAYLOAD.toLowerCase();
     switch (value.TYPE) {
       case "SEARCH":
-        console.log("search", state);
         if (searchText !== "") {
           state = allVideos;
           return state.filter((item) => {
