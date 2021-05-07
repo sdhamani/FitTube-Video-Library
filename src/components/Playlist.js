@@ -85,35 +85,37 @@ function Playlist() {
                         </div>
                       )}
                       {editplaylists.includes(item.playlistId) && (
-                        <div className="edit-playlist-name">
-                          <i
-                            className="fa fa-angle-double-right"
-                            aria-hidden="true"
-                          ></i>
-                          <input
-                            readOnly={false}
-                            className="edit-playlist-name-input"
-                            placeholder="Playlist Name"
-                            onChange={(e) => setplaylistName(e.target.value)}
-                            value={playlistName}
-                            type="text"
-                          ></input>
-                          <button
-                            disabled={playlistName.length === 0}
-                            className="seconday-button edit-playlist-name-btn"
-                            onClick={(e) => {
-                              toggleEditPlaylist(item.playlistId);
-                              playlistdispatch({
-                                TYPE: "UPDATENAME",
-                                PAYLOAD: {
-                                  id: item.playlistId,
-                                  newName: playlistName,
-                                },
-                              });
-                            }}
-                          >
-                            Update
-                          </button>
+                        <div className="playlist-headers">
+                          <div className="playlist-Name">
+                            <i
+                              className="fa fa-angle-double-right"
+                              aria-hidden="true"
+                            ></i>
+                            <input
+                              readOnly={false}
+                              className="edit-playlist-name-input"
+                              placeholder="Playlist Name"
+                              onChange={(e) => setplaylistName(e.target.value)}
+                              value={playlistName}
+                              type="text"
+                            ></input>
+                            <button
+                              disabled={playlistName.length === 0}
+                              className="seconday-button edit-playlist-name-btn"
+                              onClick={(e) => {
+                                toggleEditPlaylist(item.playlistId);
+                                playlistdispatch({
+                                  TYPE: "UPDATENAME",
+                                  PAYLOAD: {
+                                    id: item.playlistId,
+                                    newName: playlistName,
+                                  },
+                                });
+                              }}
+                            >
+                              Update
+                            </button>
+                          </div>
                         </div>
                       )}
                       <div>

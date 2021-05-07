@@ -467,7 +467,6 @@ body {
   align-items: center;
 }
 .edit-playlist-name-input {
-  width: 10%;
   margin: 0rem 0.5rem;
   padding: 0.2rem 0.5rem;
 }
@@ -571,9 +570,9 @@ playlist-compo */
 }
 
 @media screen and (max-width: 767px) {
-  /* .footer-div {
-    width: 100%;
-  } */
+  .single-playlist {
+    margin: 0rem 0.5rem;
+  }
   .footer {
     font-size: small;
     position: fixed;
