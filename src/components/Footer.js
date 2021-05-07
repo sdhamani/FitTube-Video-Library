@@ -13,14 +13,14 @@ function Footer() {
           >
             {" "}
             <div className="badge-div">
-              <i class="fa fa-home  badge-icons" aria-hidden="true"></i>{" "}
+              <i className="fa fa-home  badge-icons" aria-hidden="true"></i>{" "}
             </div>
           </NavLink>
         </li>
         <li className="list-item-inline">
           <NavLink to="/history" activeClassName="nav-active-icon">
             <div className="badge-div">
-              <i class="fa fa-history  badge-icons" aria-hidden="true"></i>{" "}
+              <i className="fa fa-history  badge-icons" aria-hidden="true"></i>{" "}
             </div>
           </NavLink>
         </li>
@@ -28,21 +28,21 @@ function Footer() {
         <li className="list-item-inline">
           <NavLink to="/playlist" activeClassName="nav-active-icon">
             <div className="badge-div">
-              <i class="fa fa-play-circle  badge-icons" aria-hidden="true"></i>
+              <i className="fa fa-play-circle  badge-icons" aria-hidden="true"></i>
             </div>
           </NavLink>
         </li>
         <li className="list-item-inline">
           <NavLink to="/watchlater" activeClassName="nav-active-icon">
             <div className="badge-div">
-              <i class="fa fa-clock-o  badge-icons" aria-hidden="true"></i>
+              <i className="fa fa-clock-o  badge-icons" aria-hidden="true"></i>
             </div>
           </NavLink>
         </li>
         <li className="list-item-inline">
           <NavLink to="/likedvideos" activeClassName="nav-active-icon">
             <div className="badge-div">
-              <i class="fa fa-thumbs-up badge-icons" aria-hidden="true"></i>
+              <i className="fa fa-thumbs-up badge-icons" aria-hidden="true"></i>
             </div>
           </NavLink>
         </li>

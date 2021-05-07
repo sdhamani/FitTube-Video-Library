@@ -18,7 +18,10 @@ function SideBar({ hamDisplay, setHamDisplay }) {
               activeClassName="nav-active-icon"
               to="/"
             >
-              <i class="fa fa-home fa-lg badge-icons" aria-hidden="true"></i>{" "}
+              <i
+                className="fa fa-home fa-lg badge-icons"
+                aria-hidden="true"
+              ></i>{" "}
               <label className="sidebar-label">Home</label>
             </NavLink>
           </div>
@@ -31,7 +34,10 @@ function SideBar({ hamDisplay, setHamDisplay }) {
               className="link-no-decoration"
               to="/history"
             >
-              <i class="fa fa-history fa-lg badge-icons" aria-hidden="true"></i>{" "}
+              <i
+                className="fa fa-history fa-lg badge-icons"
+                aria-hidden="true"
+              ></i>{" "}
               <label className="sidebar-label">History</label>
             </NavLink>
           </div>
@@ -45,7 +51,7 @@ function SideBar({ hamDisplay, setHamDisplay }) {
               to="/playlist"
             >
               <i
-                class="fa fa-play-circle fa-lg badge-icons"
+                className="fa fa-play-circle fa-lg badge-icons"
                 aria-hidden="true"
               ></i>{" "}
               <label className="sidebar-label">Playlist</label>
@@ -60,7 +66,10 @@ function SideBar({ hamDisplay, setHamDisplay }) {
               activeClassName="nav-active-icon"
               to="/watchlater"
             >
-              <i class="fa fa-clock-o fa-lg badge-icons" aria-hidden="true"></i>
+              <i
+                className="fa fa-clock-o fa-lg badge-icons"
+                aria-hidden="true"
+              ></i>
               <label className="sidebar-label">Watch Later</label>
             </NavLink>
           </div>
@@ -70,7 +79,7 @@ function SideBar({ hamDisplay, setHamDisplay }) {
           >
             <NavLink className="link-no-decoration" to="/likedvideos">
               <i
-                class="fa fa-thumbs-up fa-lg badge-icons"
+                className="fa fa-thumbs-up fa-lg badge-icons"
                 aria-hidden="true"
               ></i>
               <label className="sidebar-label">Liked Videos</label>

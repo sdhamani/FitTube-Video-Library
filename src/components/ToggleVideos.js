@@ -50,13 +50,13 @@ function ToggleVideos() {
     >
       <div className="toggle-vidoes">
         <button className="toggle-left-btn" onClick={(e) => leftVideoHandler()}>
-          <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+          <i className="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
         </button>
         <button
           className="toggle-left-right"
           onClick={(e) => rightVideoHandler()}
         >
-          <i class="fa  fa-2x fa-chevron-right" aria-hidden="true"></i>
+          <i className="fa  fa-2x fa-chevron-right" aria-hidden="true"></i>
         </button>
 
         <div style={{ background_color: "blue" }}>
@@ -103,7 +103,7 @@ function ToggleVideos() {
           allowFullScreen
         ></iframe>
         <div className="toggle-swipe">
-          <i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i>
+          <i className="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i>
         </div>
       </div>
     </Swipe>
