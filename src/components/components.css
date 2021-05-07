@@ -376,6 +376,10 @@ body {
     margin: 1rem;
     justify-content: center;
   }
+  .landing-page-main-videos {
+    margin-left: 0rem;
+    justify-content: center;
+  }
 }
 /* playvide- likedbtn */
 
@@ -612,6 +616,7 @@ toggle-vidoes */
   width: 60%;
   height: 18rem;
   z-index: 5;
+  transition: all 250ms ease-in-out;
 }
 
 .toggle-video-iframe-2 {
@@ -621,6 +626,7 @@ toggle-vidoes */
   width: 35%;
   height: 15rem;
   z-index: 4;
+  transition: all 250ms ease-in-out;
 }
 
 .toggle-video-iframe-1 {
@@ -630,6 +636,7 @@ toggle-vidoes */
   width: 45%;
   height: 12rem;
   z-index: 3;
+  transition: all 250ms ease-in-out;
 }
 .toggle-video-iframe-4 {
   position: absolute;
@@ -638,6 +645,7 @@ toggle-vidoes */
   width: 35%;
   height: 15rem;
   z-index: 4;
+  transition: all 200ms ease-in-out;
 }
 .toggle-video-iframe-5 {
   position: absolute;
@@ -646,6 +654,7 @@ toggle-vidoes */
   width: 45%;
   height: 12rem;
   z-index: 3;
+  transition: all 250ms ease-in-out;
 }
 
 .toggle-left-btn {
