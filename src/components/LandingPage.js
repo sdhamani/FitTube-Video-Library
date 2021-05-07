@@ -14,37 +14,42 @@ function LandingPage() {
         <div>
           <ToggleVideos />
         </div>
-        <div className="landing-page-vidoes videos">
+
+        <div className="">
           <div className="footer-div">
             <Footer />
           </div>
-
-          {videos &&
-            videos.map((item) => {
-              return (
-                <div
-                  className="video"
-                  onClick={(e) =>
-                    historydispatch({ type: "ADDTOHISTORY", payload: item.id })
-                  }
-                >
-                  <Link
-                    className="landing-page-videos"
-                    to={`/playvideo/${item.id}`}
+          <div className="landing-page-main-videos videos">
+            {videos &&
+              videos.map((item) => {
+                return (
+                  <div
+                    className="video"
+                    onClick={(e) =>
+                      historydispatch({
+                        type: "ADDTOHISTORY",
+                        payload: item.id,
+                      })
+                    }
                   >
-                    <img className="video-image" src={item.image} alt="NA" />
+                    <Link
+                      className="landing-page-videos"
+                      to={`/playvideo/${item.id}`}
+                    >
+                      <img className="video-image" src={item.image} alt="NA" />
 
-                    <div className="video-content">
-                      <div className="video-name">{item.name}</div>
-                      <div className="video-channel">{item.channel}</div>
-                      <div className="video-channel">
-                        {item.views} {item.uploaded}
+                      <div className="video-content">
+                        <div className="video-name">{item.name}</div>
+                        <div className="video-channel">{item.channel}</div>
+                        <div className="video-channel">
+                          {item.views} {item.uploaded}
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                </div>
-              );
-            })}
+                    </Link>
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
     </div>
