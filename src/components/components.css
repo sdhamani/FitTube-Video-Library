@@ -454,7 +454,27 @@ body {
   padding: 0.3rem 0.3rem;
   margin-right: 0.2rem;
 }
+.edit-playlist-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.playlist-headers {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.edit-playlist-name-input {
+  width: 10%;
+  margin: 0rem 0.5rem;
+  padding: 0.2rem 0.5rem;
+}
 
+.edit-playlist-name-btn {
+  border-radius: 2%;
+  padding: 0.2rem 0.5rem;
+  color: var(--background-color);
+}
 .create-playlist-btn {
   padding: 0.4rem 0.3rem;
   border-radius: 0.2rem;

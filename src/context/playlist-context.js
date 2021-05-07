@@ -43,7 +43,7 @@ export function PlaylistProvider({ children }) {
   };
 
   const playlistdisptachFun = (state, value) => {
-    let { id, playlistName, videoId } = value.PAYLOAD;
+    let { id, playlistName, videoId, newName } = value.PAYLOAD;
 
     switch (value.TYPE) {
       case "CREATE":
@@ -63,7 +63,13 @@ export function PlaylistProvider({ children }) {
           }
           return playlist;
         });
-
+      case "UPDATENAME":
+        return state.map((playlist) => {
+          if (playlist.playlistId === id) {
+            playlist.name = newName;
+          }
+          return playlist;
+        });
       default:
         return state;
     }
