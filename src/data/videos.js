@@ -1,6 +1,5 @@
 const allVideos = [
   {
-    id: "FT143",
     name: "20 MIN FULL BODY WORKOUT",
     image: "https://img.youtube.com/vi/UBMk30rjy0o/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/UBMk30rjy0o",
@@ -10,7 +9,6 @@ const allVideos = [
     cateogory: "Home Workout",
   },
   {
-    id: "FT156",
     name: "BURN FAT FAST From Home Car| No Equipment",
     image: "https://img.youtube.com/vi/jzUpUe29lXI/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/jzUpUe29lXI",
@@ -20,7 +18,6 @@ const allVideos = [
     cateogory: "fat burning",
   },
   {
-    id: "FT146",
     name: "Easy Yoga Class for Athletes to Boost Recovery",
     image: "https://img.youtube.com/vi/rsuO6K2RUtI/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/rsuO6K2RUtI",
@@ -31,7 +28,6 @@ const allVideos = [
   },
 
   {
-    id: "FT142",
     name: "Day 1 | 30 Minute at Home Strength Workout | Clutch Life",
     image: "https://img.youtube.com/vi/YdB1HMCldJY/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/YdB1HMCldJY",
@@ -41,17 +37,17 @@ const allVideos = [
     cateogory: "gym",
   },
   {
-    id: "FT101",
     name: "30-Minute HIIT Cardio - No Equipment at Home | SELF",
     image:
       "https://i.ytimg.com/vi/ml6cT4AZdqI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2Yakf4nieopGux521AsbN50n9ig",
     videoLink: "https://www.youtube.com/embed/ml6cT4AZdqI",
+    views: "1.7M views",
+    uploaded: "3 years ago",
     channel: "SELF",
     cateogory: "Home Workout",
   },
 
   {
-    id: "FT144",
     name: " Min Daily Yoga Routine for Beginners",
     image: "https://img.youtube.com/vi/s2NQhpFGIOg/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/s2NQhpFGIOg",
@@ -61,7 +57,6 @@ const allVideos = [
     cateogory: "yoga",
   },
   {
-    id: "FT145",
     name: "20 min Full Body STRETCH/YOGA for STRESS & ANXIETY Relief",
     image: "https://img.youtube.com/vi/sTANio_2E0Q/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/sTANio_2E0Q",
@@ -72,7 +67,6 @@ const allVideos = [
   },
 
   {
-    id: "FT147",
     name: "30-Minute STRONG by Zumba® Cardio and Full-Body Toning Workout",
     image: "https://img.youtube.com/vi/QRZcZgSgSHI/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/QRZcZgSgSHI",
@@ -82,7 +76,6 @@ const allVideos = [
     cateogory: "zumba",
   },
   {
-    id: "FT148",
     name: "Morning Routine to Burn Belly Fat | 22 MIN Beginner Friendly ",
     image: "https://img.youtube.com/vi/GDKXYnhOuiY/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/GDKXYnhOuiYI",
@@ -92,7 +85,6 @@ const allVideos = [
     cateogory: "zumba",
   },
   {
-    id: "FT149",
     name: "Exercise To Lose Weight FAST || Zumba Class",
     image: "https://img.youtube.com/vi/vG_Bs0QLc3I/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/vG_Bs0QLc3I",
@@ -102,7 +94,6 @@ const allVideos = [
     cateogory: "zumba",
   },
   {
-    id: "FT150",
     name: "BEST Aerobics WORKOUT At HOME || 15 MIN Workout for WEIGHT LOSS",
     image: "https://img.youtube.com/vi/aTGb9NEH2NI/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/aTGb9NEH2NI",
@@ -112,7 +103,6 @@ const allVideos = [
     cateogory: "aerobics",
   },
   {
-    id: "FT151",
     name: "30 Mins Aerobic Dance Workout",
     image: "https://img.youtube.com/vi/tj9d6aBOzDo/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/tj9d6aBOzDo",
@@ -122,7 +112,6 @@ const allVideos = [
     cateogory: "aerobics",
   },
   {
-    id: "FT152",
     name: "30-Minute Standing Cardio Workout",
     image: "https://img.youtube.com/vi/-YJXpabrX4k/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/-YJXpabrX4k",
@@ -132,7 +121,6 @@ const allVideos = [
     cateogory: "cardio",
   },
   {
-    id: "FT153",
     name: "15 MIN BEGINNER CARDIO Workout",
     image: "https://img.youtube.com/vi/VWj8ZxCxrYk/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/VWj8ZxCxrYk",
@@ -142,7 +130,6 @@ const allVideos = [
     cateogory: "cardio",
   },
   {
-    id: "FT154",
     name: "10 minute POWER CARDIO Workout",
     image: "https://img.youtube.com/vi/LCOy-6BcRkI/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/LCOy-6BcRkI",
@@ -152,7 +139,6 @@ const allVideos = [
     cateogory: "cardio",
   },
   {
-    id: "FT155",
     name: "10 MINUTE FAT BURNING MORNING ROUTINE",
     image: "https://img.youtube.com/vi/7KSNmziMqog/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/7KSNmziMqog",
@@ -162,16 +148,17 @@ const allVideos = [
     cateogory: "fat burning",
   },
   {
-    id: "FT104",
     name: "30-Minute Bodyweight Abs Workout - HIIT Cardio At Home | SELF",
     image:
       "https://i.ytimg.com/vi/YJVtJMIQmkU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCDdxIbB4cmd_yL8djITaMAbO74yg",
     videoLink:
       "https://www.youtube.com/embed/YJVtJMIQmkU?list=PL7Ax6CP9_hgOYc7jvUgz6ClmBh3DHdwu9",
     channel: "Home Workout",
+    views: "2M views",
+    uploaded: "6months ago",
+    cateogory: "Home workout",
   },
   {
-    id: "FT141",
     name: "No Gym Full Chest Workout At Home",
     image: "https://img.youtube.com/vi/qml_YVfm0z0/sddefault.jpg",
     videoLink: "https://www.youtube.com/embed/qml_YVfm0z0",
