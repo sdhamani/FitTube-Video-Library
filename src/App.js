@@ -5,6 +5,7 @@ import LikedVideos from "./components/LikedVideos";
 import History from "./components/History";
 import WatchLater from "./components/WatchLater";
 import Playlist from "./components/Playlist";
+import PageNotFound from "./components/PageNotFound";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="*" element={<PageNotFound />} />
         <Route path="/likedvideos" element={<LikedVideos />} />
         <Route path="/history" element={<History />} />
         <Route path="/watchlater" element={<WatchLater />} />

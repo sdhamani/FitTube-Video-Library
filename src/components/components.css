@@ -723,3 +723,15 @@ toggle-vidoes */
     display: block;
   }
 }
+
+.PageNotFound {
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  z-index: 5;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
