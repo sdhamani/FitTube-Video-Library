@@ -11,7 +11,7 @@ const allVideos = [
   },
   {
     id: "FT156",
-    name: "BURN FAT FAST From Home | No Equipment",
+    name: "BURN FAT FAST From Home Car| No Equipment",
     image: "https://img.youtube.com/vi/jzUpUe29lXI/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/jzUpUe29lXI",
     channel: "CHRIS HERIA",
@@ -113,8 +113,7 @@ const allVideos = [
   },
   {
     id: "FT151",
-    name:
-      "https://www.youtube.com/watch?v=tj9d6aBOzDo&ab_channel=ShemarooGoodHealth24%2F7",
+    name: "30 Mins Aerobic Dance Workout",
     image: "https://img.youtube.com/vi/tj9d6aBOzDo/maxresdefault.jpg",
     videoLink: "https://www.youtube.com/embed/tj9d6aBOzDo",
     channel: "Shemaroo Good Health 24/7",

@@ -18,9 +18,6 @@ function NavBar() {
 
   useEffect(() => {
     videosdispatch({ TYPE: "SEARCH", PAYLOAD: searchText });
-    // return () => {
-    //   cleanup;
-    // };
   }, [searchText]);
 
   return (

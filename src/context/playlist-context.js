@@ -9,7 +9,6 @@ export default function usePlaylist() {
 
 export function PlaylistProvider({ children }) {
   const AddToPlaylist = (state, playlistName, id) => {
-    console.log("Add", state);
     return state.map((item) => {
       if (item.name === playlistName) {
         if (item.id.includes(id)) {
@@ -22,7 +21,6 @@ export function PlaylistProvider({ children }) {
   };
 
   const CreatePlaylist = (state, playlistName, id) => {
-    console.log("Create");
     return [
       ...state,
       {
@@ -33,8 +31,6 @@ export function PlaylistProvider({ children }) {
   };
 
   const TogglePlaylistVideo = (state, playlistName, id) => {
-    console.log("Toggle", { state });
-    console.log({ playlistName }, { id });
     return state.map((item) => {
       if (item.name === playlistName) {
         if (item.id.includes(id)) {
@@ -47,8 +43,8 @@ export function PlaylistProvider({ children }) {
   };
 
   const playlistdisptachFun = (state, value) => {
-    let { id, playlistName, videoId } = value.PAYLOAD;
-    console.log("playlist", state);
+    let { id, playlistName, videoId, newName } = value.PAYLOAD;
+
     switch (value.TYPE) {
       case "CREATE":
         return state && state.find((item) => item.name === playlistName)
@@ -57,20 +53,23 @@ export function PlaylistProvider({ children }) {
       case "TOGGLE":
         return TogglePlaylistVideo(state, playlistName, id);
       case "REMOVE":
-        console.log("videoId", videoId);
-        console.log("Id", id);
         return state.map((playlist) => {
           if (playlist.playlistId === id) {
             const UpdatedPlaylist = playlist.id.filter(
               (item) => item !== videoId
             );
-            console.log({ UpdatedPlaylist });
 
             playlist.id = UpdatedPlaylist;
           }
           return playlist;
         });
-
+      case "UPDATENAME":
+        return state.map((playlist) => {
+          if (playlist.playlistId === id) {
+            playlist.name = newName;
+          }
+          return playlist;
+        });
       default:
         return state;
     }

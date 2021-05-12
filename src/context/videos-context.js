@@ -9,16 +9,14 @@ export default function useVideos() {
 
 export function VideosProvider({ children }) {
   const dispatchfunc = (state, value) => {
-    console.log({ state }, { value });
     const searchText = value.PAYLOAD.toLowerCase();
     switch (value.TYPE) {
       case "SEARCH":
         if (searchText !== "") {
+          state = allVideos;
           return state.filter((item) => {
             const itemName = item.name.toLowerCase();
 
-            console.log(itemName);
-            console.log(itemName.includes(searchText));
             return itemName.includes(searchText);
           });
         } else {

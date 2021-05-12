@@ -24,7 +24,7 @@ function PlaylistModule({ showModule, setShowModule }) {
         <h3>Create Playlist</h3>
         <i
           onClick={(e) => setShowModule(false)}
-          class="fa fa-times-circle-o fa-lg"
+          className="fa fa-times-circle-o fa-lg"
           aria-hidden="true"
         ></i>
       </div>
@@ -117,7 +117,7 @@ function PlayVideo() {
                       }
                     >
                       {isVideoLiked ? (
-                        <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i>
+                        <i className="fa fa-thumbs-up fa-lg" aria-hidden="true"></i>
                       ) : (
                         <i
                           className="fa fa-thumbs-o-up fa-lg"

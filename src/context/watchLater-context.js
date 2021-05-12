@@ -7,7 +7,6 @@ export default function useWatchLater() {
 }
 export function WatchLaterProvider({ children }) {
   const dispatchfunc = (state, value) => {
-    console.log({ state }, { value });
     let inWatchLater = state.find((item) => item === value.payload);
     switch (value.type) {
       case "WATCHLATER":
