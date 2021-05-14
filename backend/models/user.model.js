@@ -48,9 +48,22 @@ const UserSchema = new mongoose.Schema(
         },
       },
     ],
+    watchLater: [
+      {
+        videoId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Video",
+        },
+      },
+    ],
     playlist: [
       {
-        id: [],
+        id: [
+          {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Video",
+          },
+        ],
         name: String,
       },
     ],

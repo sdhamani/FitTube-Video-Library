@@ -13,6 +13,7 @@ router
   .post(async (req, res) => {
     const { name, email, password } = req.body;
     const salt = await bcrypt.genSalt(10);
+
     const hashPassword = await bcrypt.hash(password, salt);
     try {
       const NewUser = new User({
@@ -50,10 +51,8 @@ router.post("/login", async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
     if (!user) {
-      console.log("inside user id");
       res.json({ success: false, message: "User doesn't exist" });
     } else {
-      console.log("inside else");
       const validPass = await bcrypt.compare(password, user.password);
       if (!validPass) {
         res.json({ success: false, message: "Incorrect Password" });

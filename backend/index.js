@@ -3,6 +3,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const videosRouter = require("./routers/videos.router");
 const userRouter = require("./routers/users.router");
+const likedVideosRouter = require("./routers/likedVideos.router");
+const watchLaterRouter = require("./routers/watchlater.router");
+const historyRouter = require("./routers/history.router");
+const playlistRouter = require("./routers/playlist.router");
 const initializeDBConnection = require("./db/db.connection");
 const allVideos = require("./data/videos");
 const Video = require("./models/video.model");
@@ -18,6 +22,10 @@ app.use(bodyParser.json());
 
 app.use("/videos", videosRouter);
 app.use("/user", userRouter);
+app.use("/likeVideos", likedVideosRouter);
+app.use("/watchlater", watchLaterRouter);
+app.use("/history", historyRouter);
+app.use("/playlist", playlistRouter);
 
 const addVideosToDB = async () => {
   try {

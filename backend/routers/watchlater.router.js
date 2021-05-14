@@ -5,13 +5,13 @@ const User = require("../models/user.model");
 const Video = require("../models/video.model");
 const { extend } = require("lodash");
 
-const isVideoInLikeVideosFun = async (userId, videoId) => {
+const isvideoInWatchLaterArrFun = async (userId, videoId) => {
   let user = await User.findById(userId);
-  let likedVideos = user.likedVideos;
-  const isvideoInLikeVideoArr = likedVideos.filter(
+  let watchLater = user.watchLater;
+  const isvideoInWatchLaterArr = watchLater.filter(
     (item) => JSON.stringify(item.videoId) === JSON.stringify(videoId)
   );
-  if (isvideoInLikeVideoArr.length !== 0) {
+  if (isvideoInWatchLaterArr.length !== 0) {
     return true;
   }
   return false;
@@ -21,19 +21,19 @@ router.get("/", privateRoute, async (req, res) => {
   const userId = req.user._id;
   try {
     let user = await User.findById(userId);
-    
-    let likedVideos = user.likedVideos;
- 
+
+    let watchLater = user.watchLater;
+
     res.json({
       success: true,
-      message: "Like Videos fetched Successfully",
-      likedVideos: likedVideos,
+      message: "Watch Later Videos fetched Successfully",
+      watchLater: watchLater,
     });
   } catch (error) {
     res.json({
       success: true,
       errorMessage: error.message,
-      message: "Error occured while getting Liked Videos",
+      message: "Error occured while getting Watch later",
       userId: req.user._id,
     });
   }
@@ -63,48 +63,51 @@ router.route("/:videoId").post(privateRoute, async (req, res) => {
     const videoId = req.video._id;
     const userId = req.user._id;
     let user = await User.findById(userId);
-    let likedVideos = user.likedVideos;
-  
-    const isVideoInLikeVideos = await isVideoInLikeVideosFun(userId, videoId);
-  
-    if (isVideoInLikeVideos) {
-      let UpdatedlikedVideos = likedVideos.filter(
+    let watchLater = user.watchLater;
+
+    const isVideoInWatchLater = await isvideoInWatchLaterArrFun(
+      userId,
+      videoId
+    );
+
+    if (isVideoInWatchLater) {
+      let UpdatedwatchLater = watchLater.filter(
         (item) => JSON.stringify(item.videoId) !== JSON.stringify(videoId)
       );
-      user.likedVideos = UpdatedlikedVideos;
+      user.watchLater = UpdatedwatchLater;
       await user.save();
       let Returnuser = await User.findById(userId).populate(
-        "likedVideos.videoId"
+        "watchLater.videoId"
       );
-      likedVideos = Returnuser.likedVideos;
+      watchLater = Returnuser.watchLater;
       res.json({
         success: true,
-        message: "Product successfully deleted from the likedVideos",
-        UpdatedlikedVideos: likedVideos,
+        message: "Product successfully deleted from the watchLater",
+        UpdatedwatchLater: watchLater,
       });
     } else {
-      let newlikedVideosItem = {
+      let newwatchLaterItem = {
         videoId: videoId,
         quantity: 1,
       };
-      likedVideos.push(newlikedVideosItem);
-      user.likedVideos = likedVideos;
+      watchLater.push(newwatchLaterItem);
+      user.watchLater = watchLater;
       await user.save();
       let Returnuser = await User.findById(userId).populate(
-        "likedVideos.videoId"
+        "watchLater.videoId"
       );
-      likedVideos = Returnuser.likedVideos;
+      watchLater = Returnuser.watchLater;
 
       res.json({
         success: true,
-        message: "Product successfully added to the likedVideos",
-        UpdatedlikedVideos: likedVideos,
+        message: "Product successfully added to the watchLater",
+        UpdatedwatchLater: watchLater,
       });
     }
   } catch (error) {
     res.json({
       success: false,
-      message: "Product wasn't added to likedVideos",
+      message: "Product wasn't added to watchLater",
       errorMessage: error.message,
     });
   }
