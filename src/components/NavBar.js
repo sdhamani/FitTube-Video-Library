@@ -1,12 +1,16 @@
 import { React, useState, useEffect } from "react";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route, NavLink, Link, useNavigate } from "react-router-dom";
 import "./components.css";
 import SideBar from "./SideBar";
 import useVideos from "../context/videos-context";
+import useLogin from "../context/login-context";
 function NavBar() {
   const [searchText, setSearchText] = useState("");
   const { videosdispatch } = useVideos();
+  const navigate = useNavigate();
+  const [logoutBtn, setlogoutBtn] = useState(true);
   const [hamDisplay, setHamDisplay] = useState(false);
+  const { loggedIn, setloggedIn, userName } = useLogin();
 
   const SearchVideos = () => {
     videosdispatch({ TYPE: "SEARCH", PAYLOAD: searchText });
@@ -20,6 +24,19 @@ function NavBar() {
     videosdispatch({ TYPE: "SEARCH", PAYLOAD: searchText });
   }, [searchText]);
 
+  function logoutFun() {
+    setlogoutBtn(true);
+    setloggedIn(false);
+    localStorage?.setItem("login", JSON.stringify({ isUserLoggedIn: false }));
+    localStorage?.setItem(
+      "localUserName",
+      JSON.stringify({ localUserName: "" })
+    );
+    localStorage?.setItem("token", JSON.stringify({ token: "" }));
+    navigate("/");
+    // dispatch({ type: "USERCART", payload: [] });
+    // wishlistdispatch({ type: "USERWISHLIST", payload: [] });
+  }
   return (
     <div>
       <nav className="navigation nav-ecom">
@@ -36,7 +53,7 @@ function NavBar() {
           <div className="bar3"></div>
         </div>
         <Link className="link-no-decoration" to="/">
-          <h1 className="nav-heading">
+          <h1 className={loggedIn ? "nav-heading-loggedin" : "nav-heading"}>
             <i class="fa fa-youtube-play" aria-hidden="true"></i>
             Fit<small className="nav-half-heading">Tube</small>
           </h1>
@@ -54,6 +71,33 @@ function NavBar() {
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </div>
+
+        {loggedIn && (
+          <div>
+            <div
+              className="loggedin-Name"
+              onClick={(e) => setlogoutBtn(!logoutBtn)}
+            >
+              <div className="nav-username">Hi {userName}!</div>
+              <div className="badge-div">
+                <i
+                  className="fa fa-user-circle fa-lg badge-icons logged-in-user"
+                  aria-hidden="true"
+                >
+                  {" "}
+                </i>
+              </div>
+            </div>
+            <div
+              onClick={(e) => logoutFun()}
+              className={
+                logoutBtn ? "logout-btn-div  nodisplay " : "logout-btn-div"
+              }
+            >
+              <button className="logout_btn">Logout</button>
+            </div>
+          </div>
+        )}
 
         <div className="nav-icons">
           <ul className="list-no-bullets nav-pills nav-list-ecom">
@@ -113,16 +157,18 @@ function NavBar() {
                 </div>
               </NavLink>
             </li>
-            <li className="list-item-inline">
-              <NavLink to="/" activeClassName="nav-active-icon">
-                <div className="badge-div">
-                  <i
-                    class="fa fa-user-circle-o fa-lg badge-icons"
-                    aria-hidden="true"
-                  ></i>
-                </div>
-              </NavLink>
-            </li>
+            {!loggedIn && (
+              <li className="list-item-inline">
+                <NavLink to="/login" activeClassName="nav-active-icon">
+                  <div className="badge-div">
+                    <i
+                      class="fa fa-user-circle-o fa-lg badge-icons"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

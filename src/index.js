@@ -9,23 +9,29 @@ import { WatchLaterProvider } from "./context/watchLater-context";
 import { HistoryProvider } from "./context/history-context";
 
 import { PlaylistProvider } from "./context/playlist-context";
+import { LoginProvider } from "./context/login-context";
 
 import { VideosProvider } from "./context/videos-context";
+import { DataProvider } from "./context/data-context";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <VideosProvider>
-        <PlaylistProvider>
-          <HistoryProvider>
-            <WatchLaterProvider>
-              <LikedVideosProvider>
-                <App />
-              </LikedVideosProvider>
-            </WatchLaterProvider>
-          </HistoryProvider>
-        </PlaylistProvider>
-      </VideosProvider>
+      <LoginProvider>
+        <DataProvider>
+          <VideosProvider>
+            <PlaylistProvider>
+              <HistoryProvider>
+                <WatchLaterProvider>
+                  <LikedVideosProvider>
+                    <App />
+                  </LikedVideosProvider>
+                </WatchLaterProvider>
+              </HistoryProvider>
+            </PlaylistProvider>
+          </VideosProvider>
+        </DataProvider>
+      </LoginProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

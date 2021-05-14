@@ -30,6 +30,7 @@ router
       const userId = savedUser._id;
       const userName = savedUser.name;
       const token = jwt.sign({ _id: userId }, process.env.tokenSecret);
+      console.log("User created");
       res.header("auth-token", token).json({
         success: true,
         userid: userId,

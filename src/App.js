@@ -6,7 +6,10 @@ import History from "./components/History";
 import WatchLater from "./components/WatchLater";
 import Playlist from "./components/Playlist";
 import PageNotFound from "./components/PageNotFound";
+import Signup from "./components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 function App() {
   return (
@@ -15,11 +18,15 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="*" element={<PageNotFound />} />
-        <Route path="/likedvideos" element={<LikedVideos />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/watchlater" element={<WatchLater />} />
+
         <Route path="/playvideo/:id" element={<PlayVideo />} />
-        <Route path="/playlist" element={<Playlist />} />
+
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <PrivateRoute path="/history" element={<history />} />
+        <PrivateRoute path="/watchlater" element={<WatchLater />} />
+        <PrivateRoute path="/playlist" element={<Playlist />} />
+        <PrivateRoute path="/likedvideos" element={<LikedVideos />} />
       </Routes>
     </div>
   );

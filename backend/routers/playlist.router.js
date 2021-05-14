@@ -5,19 +5,6 @@ const User = require("../models/user.model");
 const Video = require("../models/video.model");
 const { extend } = require("lodash");
 
-const isProductInCartFun = async (userId, productId) => {
-  let user = await User.findById(userId);
-  let cart = user.cart;
-  const isProductInCartArr = cart.filter(
-    (item) => JSON.stringify(item.productId) === JSON.stringify(productId)
-  );
-  console.log("in ipc");
-  if (isProductInCartArr.length !== 0) {
-    return true;
-  }
-  return false;
-};
-
 router.get("/", privateRoute, async (req, res) => {
   const userId = req.user._id;
   try {

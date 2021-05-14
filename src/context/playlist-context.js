@@ -53,6 +53,7 @@ export function PlaylistProvider({ children }) {
       case "TOGGLE":
         return TogglePlaylistVideo(state, playlistName, id);
       case "REMOVE":
+        console.log("playlist", state, id, videoId);
         return state.map((playlist) => {
           if (playlist.playlistId === id) {
             const UpdatedPlaylist = playlist.id.filter(
@@ -60,9 +61,12 @@ export function PlaylistProvider({ children }) {
             );
 
             playlist.id = UpdatedPlaylist;
+            return playlist;
           }
+
           return playlist;
         });
+
       case "UPDATENAME":
         return state.map((playlist) => {
           if (playlist.playlistId === id) {

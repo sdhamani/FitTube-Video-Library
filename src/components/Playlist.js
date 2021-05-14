@@ -137,6 +137,7 @@ function Playlist() {
                                 >
                                   <div
                                     onClick={(e) => {
+                                      console.log("hhelo", { videoObj });
                                       playlistdispatch({
                                         TYPE: "REMOVE",
                                         PAYLOAD: {

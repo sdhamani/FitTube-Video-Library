@@ -21,26 +21,44 @@ body {
   color: var(--primary-color);
   text-align: left;
   align-items: flex-start;
-  font-size: xx-large;
+  font-size: 1.5rem;
   font-style: normal;
-  margin-right: 6rem;
+  margin-right: 9rem;
   margin-left: 1.2rem;
+}
+
+.nav-heading-loggedin {
+  color: var(--primary-color);
+  text-align: left;
+  align-items: flex-start;
+  font-size: 1.5rem;
+  font-style: normal;
+  margin-right: 5rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
 }
 .nav-heading .fa {
   margin: 0rem 0.5rem;
 }
 
 .container {
-  height: 2rem;
-  top: 0.1rem;
+  height: 1.5rem;
+  top: -0.2rem;
   position: relative;
   display: inline-block;
-  background-color: black;
-  width: 2rem;
+  background-color: var(--primary-color);
+  width: 1.5rem;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 1.5rem;
+  height: 0.2rem;
 }
 
 .nav-half-heading {
-  font-size: xx-large;
+  font-size: 1.5rem;
   margin: 0rem 0.2rem;
   background-color: var(--primary-color);
   color: var(--background-color);
@@ -64,10 +82,51 @@ body {
 }
 .input-search {
   width: 88%;
-  padding: 0.3rem 0.3rem;
+  padding: 0.1rem 0.3rem;
   border: none;
   outline: none;
+  font-size: small;
+}
+
+.loggedin-Name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 0.6rem;
+}
+
+.nav-username {
+  color: var(--primary-color);
+  width: 5rem;
+  margin-right: 0.45rem;
+  font-weight: 500;
   font-size: large;
+  display: block;
+}
+
+.logout-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5rem;
+  height: 2rem;
+  position: absolute;
+  top: 3rem;
+  border-radius: 0.4rem;
+  background-color: var(--primary-color);
+}
+.nodisplay {
+  display: none;
+}
+
+.logout_btn {
+  cursor: pointer;
+  border-radius: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color) !important;
+  color: var(--primary-color);
 }
 
 .input button {
@@ -75,7 +134,7 @@ body {
   background-color: var(--primary-color);
   color: var(--background-color);
   border-left: 1px solid grey;
-  padding: 0.5rem 1.4rem;
+  padding: 0.4rem 1.4rem;
 }
 
 .navigation {
@@ -734,4 +793,150 @@ toggle-vidoes */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* login and signup */
+
+.login-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.login-center-div {
+  width: 30%;
+  height: 45%;
+}
+
+.login-card {
+  box-shadow: 0 3px 8px rgb(0 0 0 / 24%);
+  border-radius: 1rem;
+  color: var(--button-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+.login-card-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.login-account {
+  margin: 1rem;
+  display: inline;
+}
+
+.login-input-div {
+  margin: 0.2rem 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.error-message-div {
+  text-align: center;
+}
+
+.login-input {
+  width: 80%;
+  padding: 0.5rem 0.5rem;
+  margin: 0.3rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+.login-actions {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--button-text-color);
+  margin: 0.8rem 0.2rem;
+}
+.login-actions-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* login-mobile-styling */
+@media screen and (max-width: 767px) {
+  .login-center-div {
+    width: 80%;
+  }
+}
+
+.signin {
+  border: 1px solid var(--button-text-color);
+  width: 80%;
+  margin: 0.5rem;
+}
+
+.disabled-btn {
+  width: 80%;
+  background-color: var(--primary-color);
+  padding: 0.3rem 0.3rem;
+  margin: 0.2rem 0.2rem;
+}
+
+.input-check {
+  width: 80%;
+  display: block;
+  text-align: left;
+  font-size: small;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: gray;
+}
+
+input:focus:invalid {
+  background-color: var(--button-text-color);
+}
+
+input:required:focus:valid {
+  border-color: var(--action-bar-color);
+  background-size: 25px;
+}
+
+input:invalid {
+  border-color: var(--action-bar-color);
+
+  background-size: 25px;
+  background-color: var(--button-text-color);
+}
+
+input[id="login-password"]:focus:invalid {
+  background: white;
+}
+
+/* signup-page */
+
+.signup-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.signup-center-div {
+  width: 30%;
+  height: 45%;
+}
+
+.signup-card {
+  box-shadow: 0 3px 8px rgb(0 0 0 / 24%);
+  border-radius: 1rem;
+  color: var(--button-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 767px) {
+  .signup-center-div {
+    width: 80%;
+  }
 }
