@@ -9,7 +9,7 @@ export default async function LoginUser(emailId, password) {
     };
 
     const loginObj = await axios.post(url, userObj);
-    console.log({ loginObj });
+
     if (loginObj.data.success) {
       return loginObj.data;
     } else {

@@ -54,7 +54,7 @@ function NavBar() {
         </div>
         <Link className="link-no-decoration" to="/">
           <h1 className={loggedIn ? "nav-heading-loggedin" : "nav-heading"}>
-            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            <i className="fa fa-youtube-play" aria-hidden="true"></i>
             Fit<small className="nav-half-heading">Tube</small>
           </h1>
         </Link>
@@ -68,7 +68,7 @@ function NavBar() {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button className="input-search-btn" onClick={(e) => SearchVideos()}>
-            <i class="fa fa-search" aria-hidden="true"></i>
+            <i className="fa fa-search" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -110,7 +110,7 @@ function NavBar() {
                 {" "}
                 <div className="badge-div">
                   <i
-                    class="fa fa-home fa-lg badge-icons"
+                    className="fa fa-home fa-lg badge-icons"
                     aria-hidden="true"
                   ></i>{" "}
                 </div>
@@ -120,7 +120,7 @@ function NavBar() {
               <NavLink to="/history" activeClassName="nav-active-icon">
                 <div className="badge-div">
                   <i
-                    class="fa fa-history fa-lg badge-icons"
+                    className="fa fa-history fa-lg badge-icons"
                     aria-hidden="true"
                   ></i>{" "}
                 </div>
@@ -131,7 +131,7 @@ function NavBar() {
               <NavLink to="/playlist" activeClassName="nav-active-icon">
                 <div className="badge-div">
                   <i
-                    class="fa fa-play-circle fa-lg badge-icons"
+                    className="fa fa-play-circle fa-lg badge-icons"
                     aria-hidden="true"
                   ></i>
                 </div>
@@ -141,7 +141,7 @@ function NavBar() {
               <NavLink to="/watchlater" activeClassName="nav-active-icon">
                 <div className="badge-div">
                   <i
-                    class="fa fa-clock-o fa-lg badge-icons"
+                    className="fa fa-clock-o fa-lg badge-icons"
                     aria-hidden="true"
                   ></i>
                 </div>
@@ -151,7 +151,7 @@ function NavBar() {
               <NavLink to="/likedvideos" activeClassName="nav-active-icon">
                 <div className="badge-div">
                   <i
-                    class="fa fa-thumbs-up fa-lg badge-icons"
+                    className="fa fa-thumbs-up fa-lg badge-icons"
                     aria-hidden="true"
                   ></i>
                 </div>
@@ -162,7 +162,7 @@ function NavBar() {
                 <NavLink to="/login" activeClassName="nav-active-icon">
                   <div className="badge-div">
                     <i
-                      class="fa fa-user-circle-o fa-lg badge-icons"
+                      className="fa fa-user-circle-o fa-lg badge-icons"
                       aria-hidden="true"
                     ></i>
                   </div>

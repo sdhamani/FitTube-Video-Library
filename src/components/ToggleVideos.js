@@ -1,16 +1,17 @@
 import React from "react";
-import allVideos from "../data/videos";
 import Swipe from "react-easy-swipe";
+import useData from "../context/data-context";
 
 import { useState } from "react";
 function ToggleVideos() {
+  const { data, setData } = useData();
   const [counter1, Setcounter1] = useState(1);
   const [counter2, Setcounter2] = useState(2);
   const [counter3, Setcounter3] = useState(3);
   const [counter4, Setcounter4] = useState(4);
   const [counter5, Setcounter5] = useState(5);
 
-  let videos = allVideos;
+  let videos = data;
 
   const leftCounter = (counter, Setcounter) => {
     if (counter === 1) {
@@ -80,7 +81,7 @@ function ToggleVideos() {
         ></iframe>
         <iframe
           className={`toggle-video-iframe-${counter3}`}
-          src={videos[15].videoLink}
+          src={videos[16].videoLink}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -88,7 +89,7 @@ function ToggleVideos() {
         ></iframe>
         <iframe
           className={`toggle-video-iframe-${counter4}`}
-          src={videos[13].videoLink}
+          src={videos[11].videoLink}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -96,7 +97,7 @@ function ToggleVideos() {
         ></iframe>
         <iframe
           className={`toggle-video-iframe-${counter5}`}
-          src={videos[6].videoLink}
+          src={videos[5].videoLink}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

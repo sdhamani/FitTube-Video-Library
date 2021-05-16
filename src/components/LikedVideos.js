@@ -1,14 +1,14 @@
 import React from "react";
-
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useLikedVideos from "../context/likevideos-context";
-import videos from "../data/videos";
 import Footer from "./Footer";
+import useData from "../context/data-context";
+import { getLikeVideos } from "../api/likevideos-api";
 
 function LikedVideos() {
   let { likevideos } = useLikedVideos();
 
-  let likdeVideosObj = videos.filter((item) => likevideos.includes(item.id));
   return (
     <div>
       {" "}
@@ -25,22 +25,28 @@ function LikedVideos() {
           )}
         </div>
         <div className="component-videos videos">
-          {likdeVideosObj &&
-            likdeVideosObj.map((item) => {
+          {likevideos &&
+            likevideos.map((item) => {
               return (
                 <div className="video">
                   <Link
                     className="landing-page-videos"
-                    to={`/playvideo/${item.id}`}
+                    to={`/playvideo/${item.videoId._id}`}
                   >
-                    <img className="video-image" src={item.image} alt="NA" />
+                    <img
+                      className="video-image"
+                      src={item.videoId.image}
+                      alt="NA"
+                    />
 
                     <div className="video-content">
-                      <div className="video-name">{item.name}</div>
-                      <div className="video-channel">{item.channel}</div>
+                      <div className="video-name">{item.videoId.name}</div>
+                      <div className="video-channel">
+                        {item.videoId.channel}
+                      </div>
                       <div className="video-channel">
                         {" "}
-                        {item.views} {item.uploaded}
+                        {item.videoId.views} {item.videoId.uploaded}
                       </div>
                     </div>
                   </Link>

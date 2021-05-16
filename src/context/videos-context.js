@@ -18,19 +18,18 @@ export default function useVideos() {
 export function VideosProvider({ children }) {
   const { data, setData } = useData();
   const [allVideos, setallVideos] = useState([]);
-  let sabVideos = [];
+
   useEffect(() => {
-    async function fecthproducts() {
+    async function fecthVideos() {
       const response = await GetVideos();
-      console.log("response", response);
       if (response.success) {
-        sabVideos = response.Videos;
-        setData(response.Videos);
+        setData(response.videos);
       } else {
         console.log(response.data.message);
       }
     }
-    fecthproducts();
+
+    fecthVideos();
   }, []);
 
   const dispatchfunc = (state, value) => {
@@ -52,11 +51,11 @@ export function VideosProvider({ children }) {
     }
   };
 
-  const [videos, videosdispatch] = useReducer(dispatchfunc, allVideos);
-  console.log("sabVideos", sabVideos);
+  const [videos, videosdispatch] = useReducer(dispatchfunc, data);
+
   return (
     <VideosContainer.Provider
-      value={{ videos: sabVideos, videosdispatch: videosdispatch }}
+      value={{ videos: data, videosdispatch: videosdispatch }}
     >
       {children}
     </VideosContainer.Provider>

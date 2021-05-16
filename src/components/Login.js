@@ -5,7 +5,11 @@ import useLogin from "../context/login-context";
 import { useLocation, useNavigate } from "react-router-dom";
 import LoginUser from "../api/login-api";
 
+import usePlaylist from "../context/playlist-context";
+import getPlaylist from "../api/playlist-api";
+
 export default function Login() {
+  let { playlist, playlistdispatch } = usePlaylist();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -17,19 +21,16 @@ export default function Login() {
   const [showLoading, setshowLoading] = useState(false);
   const navigate = useNavigate();
 
-  const getCartAndWishlist = async (token) => {
-    // const apicart = await Getcart(token);
+  const getUserData = async (token) => {
+    const playlists = await getPlaylist(token);
 
-    // dispatch({ type: "USERCART", payload: apicart });
-    // const apiwishlist = await Getwishlist(token);
+    playlistdispatch({ type: "USERPLAYLIST", payload: playlists });
 
-    // wishlistdispatch({ type: "USERWISHLIST", payload: apiwishlist });
     navigate(state?.from ? state.from : "/");
   };
 
   const signInUser = async () => {
     setshowLoading(true);
-    // sac
 
     const response = await LoginUser(email, password);
     if (response.success === true) {
@@ -43,7 +44,7 @@ export default function Login() {
         JSON.stringify({ localUserName: response.userName })
       );
       navigate(state?.from ? state.from : "/");
-      // getCartAndWishlist(response.token);
+      getUserData(response.token);
     } else {
       setCredentialsError(response);
       setloggedIn(false);

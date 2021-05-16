@@ -7,7 +7,6 @@ import Footer from "./Footer";
 function History() {
   let { history } = useHistory();
 
-  let historyObj = videos.filter((item) => history.includes(item.id));
   return (
     <div>
       {" "}
@@ -18,7 +17,7 @@ function History() {
 
         <div className="page-heading">
           <h1 className="page-heading-head">History</h1>
-          {history.length === 0 && (
+          {history && history.length === 0 && (
             <p className="no-items">
               Nothing added here yet, Maybe today is the day.
             </p>
@@ -26,22 +25,28 @@ function History() {
         </div>
 
         <div className="component-videos videos">
-          {historyObj &&
-            historyObj.map((item) => {
+          {history &&
+            history.map((item) => {
               return (
                 <div className="video">
                   <Link
                     className="landing-page-videos"
-                    to={`/playvideo/${item.id}`}
+                    to={`/playvideo/${item.videoId._id}`}
                   >
-                    <img className="video-image" src={item.image} alt="NA" />
+                    <img
+                      className="video-image"
+                      src={item.videoId.image}
+                      alt="NA"
+                    />
 
                     <div className="video-content">
-                      <div className="video-name">{item.name}</div>
-                      <div className="video-channel">{item.channel}</div>
+                      <div className="video-name">{item.videoId.name}</div>
+                      <div className="video-channel">
+                        {item.videoId.channel}
+                      </div>
                       <div className="video-channel">
                         {" "}
-                        {item.views} {item.uploaded}
+                        {item.videoId.views} {item.videoId.uploaded}
                       </div>
                     </div>
                   </Link>

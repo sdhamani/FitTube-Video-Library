@@ -3,6 +3,57 @@ const router = express.Router();
 const User = require("../models/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Video = require("../models/video.model");
+
+// const getId = async (category) => {
+//   const Videos = await Video.find({});
+//   const filteredArray = Videos.filter((item) => item.cateogory === category);
+//   console.log(filteredArray.map((item) => String(item._id)));
+//   return filteredArray.map((item) => String(item._id));
+// };
+
+const intialPlaylist = [
+  {
+    name: "Yoga",
+    id: [
+      "609791ca32cdc81b4434b9bb",
+      "609791ca32cdc81b4434b9bf",
+      "609791ca32cdc81b4434b9be",
+    ],
+  },
+  {
+    name: "Cardio",
+    id: [
+      "609791ca32cdc81b4434b9c6",
+      "609791ca32cdc81b4434b9c7",
+      "609791ca32cdc81b4434b9c5",
+    ],
+  },
+  {
+    name: "Zumba",
+    id: [
+      "609791ca32cdc81b4434b9c0",
+      "609791ca32cdc81b4434b9c1",
+      "609791ca32cdc81b4434b9c2",
+    ],
+  },
+  {
+    name: "Aerobics",
+    id: ["609791ca32cdc81b4434b9c3", "609791ca32cdc81b4434b9c4"],
+  },
+  {
+    name: "Fat Burning",
+    id: ["609791ca32cdc81b4434b9ba", "609791ca32cdc81b4434b9c8"],
+  },
+  {
+    name: "Home Workout",
+    id: ["609791ca32cdc81b4434b9b9", "609791ca32cdc81b4434b9bd"],
+  },
+  {
+    name: "Gym Workout",
+    id: ["609791ca32cdc81b4434b9bc"],
+  },
+];
 
 router
   .route("/")
@@ -23,7 +74,7 @@ router
         likedVideos: [],
         history: [],
         wishlist: [],
-        playlist: [],
+        playlist: intialPlaylist,
       });
 
       const savedUser = await NewUser.save();

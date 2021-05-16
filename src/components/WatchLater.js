@@ -9,7 +9,6 @@ import Footer from "./Footer";
 function WatchLater() {
   let { watchLater } = useWatchLater();
 
-  let watchLaterObj = videos.filter((item) => watchLater.includes(item.id));
   return (
     <div>
       {" "}
@@ -20,7 +19,7 @@ function WatchLater() {
 
         <div className="page-heading">
           <h1 className="page-heading-head">Watch Later</h1>
-          {watchLater.length === 0 && (
+          {watchLater && watchLater.length === 0 && (
             <p className="no-items">
               Nothing added here yet, Maybe today is the day.
             </p>
@@ -28,22 +27,28 @@ function WatchLater() {
         </div>
 
         <div className=" component-videos  videos">
-          {watchLaterObj &&
-            watchLaterObj.map((item) => {
+          {watchLater &&
+            watchLater.map((item) => {
               return (
                 <div className="video">
                   <Link
                     className="landing-page-videos"
-                    to={`/playvideo/${item.id}`}
+                    to={`/playvideo/${item.videoId._id}`}
                   >
-                    <img className="video-image" src={item.image} alt="NA" />
+                    <img
+                      className="video-image"
+                      src={item.videoId.image}
+                      alt="NA"
+                    />
 
                     <div className="video-content">
-                      <div className="video-name">{item.name}</div>
-                      <div className="video-channel">{item.channel}</div>
+                      <div className="video-name">{item.videoId.name}</div>
+                      <div className="video-channel">
+                        {item.videoId.channel}
+                      </div>
                       <div className="video-channel">
                         {" "}
-                        {item.views} {item.uploaded}
+                        {item.videoId.views} {item.videoId.uploaded}
                       </div>
                     </div>
                   </Link>

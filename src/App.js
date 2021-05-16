@@ -23,7 +23,7 @@ function App() {
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <PrivateRoute path="/history" element={<history />} />
+        <PrivateRoute path="/history" element={<History />} />
         <PrivateRoute path="/watchlater" element={<WatchLater />} />
         <PrivateRoute path="/playlist" element={<Playlist />} />
         <PrivateRoute path="/likedvideos" element={<LikedVideos />} />

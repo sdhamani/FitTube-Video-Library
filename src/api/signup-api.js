@@ -10,6 +10,7 @@ export default async function SignupUser(userName, emailId, password) {
     };
 
     const signupObj = await axios.post(url, userObj);
+
     if (signupObj.data.success) {
       return signupObj.data;
     } else {

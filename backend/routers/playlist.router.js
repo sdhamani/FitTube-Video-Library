@@ -120,6 +120,7 @@ router.post("/rename", privateRoute, async (req, res) => {
     const { playlistName, newName } = req.body;
     const userId = req.user._id;
     let user = await User.findById(userId).populate("playlist.id");
+
     const isPlaylistAlreadyPresent = user.playlist.find(
       (list) => list.name === playlistName
     );

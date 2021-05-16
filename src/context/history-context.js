@@ -1,4 +1,5 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import getHistory from "../api/history-api";
 
 const HistoryContainer = createContext();
 
@@ -7,10 +8,22 @@ export default function useHistory() {
 }
 
 export function HistoryProvider({ children }) {
+  useEffect(() => {
+    const getplaylists = async (token) => {
+      const history = await getHistory(token);
+
+      historydispatch({ type: "USERHISTORY", payload: history });
+    };
+    if (JSON.parse(localStorage?.getItem("login"))) {
+      const { token } = JSON.parse(localStorage?.getItem("token"));
+      getplaylists(token);
+    }
+  }, []);
+
   const dispatchfunc = (state, value) => {
     switch (value.type) {
-      case "ADDTOHISTORY":
-        return [...state, value.payload];
+      case "USERHISTORY":
+        return value.payload;
       default:
         return state;
     }

@@ -20,10 +20,10 @@ const isVideoInLikeVideosFun = async (userId, videoId) => {
 router.get("/", privateRoute, async (req, res) => {
   const userId = req.user._id;
   try {
-    let user = await User.findById(userId);
-    
+    let user = await User.findById(userId).populate("likedVideos.videoId");
+
     let likedVideos = user.likedVideos;
- 
+
     res.json({
       success: true,
       message: "Like Videos fetched Successfully",
@@ -64,9 +64,9 @@ router.route("/:videoId").post(privateRoute, async (req, res) => {
     const userId = req.user._id;
     let user = await User.findById(userId);
     let likedVideos = user.likedVideos;
-  
+
     const isVideoInLikeVideos = await isVideoInLikeVideosFun(userId, videoId);
-  
+
     if (isVideoInLikeVideos) {
       let UpdatedlikedVideos = likedVideos.filter(
         (item) => JSON.stringify(item.videoId) !== JSON.stringify(videoId)

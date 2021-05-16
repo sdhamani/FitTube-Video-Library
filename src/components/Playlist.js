@@ -2,19 +2,23 @@ import React from "react";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import { Link } from "react-router-dom";
-import videos from "../data/videos";
 import usePlaylist from "../context/playlist-context";
 import useHistory from "../context/history-context";
 import Footer from "./Footer";
 import { useState } from "react";
+import useData from "../context/data-context";
+import useLogin from "../context/login-context";
+import { renamePlaylistAPI, updatePlaylistAPI } from "../api/playlist-api";
+import { updateHistoryAPI } from "../api/history-api";
 
 function Playlist() {
+  const { data, setData } = useData();
   let { playlist, playlistdispatch } = usePlaylist();
   let { history, historydispatch } = useHistory();
   let [showplay, setShowPlay] = useState([]);
   let [playlistName, setplaylistName] = useState("");
   let [editplaylists, seteditplaylists] = useState([]);
-  let [editplaylistName, setEditPlaylistName] = useState(false);
+  const { token, loggedIn } = useLogin();
 
   const toggleShowPlaylist = (id) => {
     if (showplay.includes(id)) {
@@ -23,6 +27,57 @@ function Playlist() {
     } else {
       const newArray = [...showplay, id];
       setShowPlay(newArray);
+    }
+  };
+
+  const addToHistory = async (id) => {
+    try {
+      if (loggedIn) {
+        const response = await updateHistoryAPI(token, id);
+
+        if (response.success) {
+          historydispatch({
+            type: "USERHISTORY",
+            payload: response.updatedHistory,
+          });
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const updatePlaylistFunc = async (id, playlistName) => {
+    try {
+      if (loggedIn) {
+        const response = await updatePlaylistAPI(token, id, playlistName);
+
+        if (response.success) {
+          playlistdispatch({
+            type: "USERPLAYLIST",
+            payload: response.updatedPlaylist,
+          });
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const renamePlaylistFunc = async (playlistName, newName) => {
+    try {
+      if (loggedIn) {
+        const response = await renamePlaylistAPI(token, playlistName, newName);
+
+        if (response.success) {
+          playlistdispatch({
+            type: "USERPLAYLIST",
+            payload: response.updatedPlaylist,
+          });
+        }
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -78,7 +133,7 @@ function Playlist() {
                                 setplaylistName(item.name);
                                 toggleEditPlaylist(item.playlistId);
                               }}
-                              class="fa fa-pencil"
+                              className="fa fa-pencil"
                               aria-hidden="true"
                             ></i>
                           )}
@@ -104,13 +159,8 @@ function Playlist() {
                               className="seconday-button edit-playlist-name-btn"
                               onClick={(e) => {
                                 toggleEditPlaylist(item.playlistId);
-                                playlistdispatch({
-                                  TYPE: "UPDATENAME",
-                                  PAYLOAD: {
-                                    id: item.playlistId,
-                                    newName: playlistName,
-                                  },
-                                });
+
+                                renamePlaylistFunc(item.name, playlistName);
                               }}
                             >
                               Update
@@ -122,39 +172,30 @@ function Playlist() {
                         {showplay.includes(item.playlistId) && (
                           <div className="videos">
                             {item.id.map((item1) => {
-                              const videoObj = videos.find(
-                                (value) => value.id === item1
+                              const videoObj = data.find(
+                                (value) => value._id === item1._id
                               );
                               return (
                                 <div
                                   className="video"
-                                  onClick={(e) =>
-                                    historydispatch({
-                                      type: "ADDTOHISTORY",
-                                      payload: videoObj.id,
-                                    })
-                                  }
+                                  onClick={(e) => addToHistory(videoObj._id)}
                                 >
                                   <div
                                     onClick={(e) => {
-                                      console.log("hhelo", { videoObj });
-                                      playlistdispatch({
-                                        TYPE: "REMOVE",
-                                        PAYLOAD: {
-                                          id: item.playlistId,
-                                          videoId: videoObj.id,
-                                        },
-                                      });
+                                      updatePlaylistFunc(
+                                        videoObj._id,
+                                        item.name
+                                      );
                                     }}
                                   >
                                     <i
-                                      class="fa fa-times playlist-delete"
+                                      className="fa fa-times playlist-delete"
                                       aria-hidden="true"
                                     ></i>
                                   </div>
                                   <Link
                                     className="landing-page-videos"
-                                    to={`/playvideo/${videoObj.id}`}
+                                    to={`/playvideo/${videoObj._id}`}
                                   >
                                     <img
                                       className="video-image"

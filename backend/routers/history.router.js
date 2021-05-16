@@ -8,7 +8,7 @@ const { extend } = require("lodash");
 router.get("/", privateRoute, async (req, res) => {
   const userId = req.user._id;
   try {
-    let user = await User.findById(userId);
+    let user = await User.findById(userId).populate("history.videoId");
 
     let history = user.history;
 
