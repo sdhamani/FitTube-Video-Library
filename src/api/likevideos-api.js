@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function getLikeVideos(token) {
-  const url = "http://localhost:3000/likeVideos";
+  const url = "https://fittube.herokuapp.com/likeVideos";
 
   try {
     const config = {
@@ -24,7 +24,7 @@ export default async function getLikeVideos(token) {
 }
 
 export async function ToggleLikeVideosAPI(token, videoId) {
-  const url = ` http://localhost:3000/likeVideos/${videoId}`;
+  const url = ` https://fittube.herokuapp.com/likeVideos/${videoId}`;
 
   try {
     const config = {

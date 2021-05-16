@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function GetVideos() {
-  const url = "http://localhost:3000/videos";
+  const url = "https://fittube.herokuapp.com/videos";
   try {
     const videosObj = await axios.get(url);
     if (videosObj.data.success) {

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function getWatchVideos(token) {
-  const url = "http://localhost:3000/watchlater";
+  const url = "https://fittube.herokuapp.com/watchlater";
 
   try {
     const config = {
@@ -24,7 +24,7 @@ export default async function getWatchVideos(token) {
 }
 
 export async function ToggleWatchLaterAPI(token, videoId) {
-  const url = `http://localhost:3000/watchlater/${videoId}`;
+  const url = `https://fittube.herokuapp.com/watchlater/${videoId}`;
 
   try {
     const config = {

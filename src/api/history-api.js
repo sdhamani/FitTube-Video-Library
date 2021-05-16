@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function getHistory(token) {
-  const url = "http://localhost:3000/history";
+  const url = "https://fittube.herokuapp.com/history";
 
   try {
     const config = {
@@ -24,7 +24,7 @@ export default async function getHistory(token) {
 }
 
 export async function updateHistoryAPI(token, videoId) {
-  const url = `http://localhost:3000/history/${videoId}`;
+  const url = `https://fittube.herokuapp.com/history/${videoId}`;
 
   try {
     const config = {

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function getPlaylist(token) {
-  const url = "http://localhost:3000/playlist";
+  const url = "https://fittube.herokuapp.com/playlist";
 
   try {
     const config = {
@@ -28,7 +28,7 @@ export async function updatePlaylistAPI(token, videoId, playlistName) {
     playlistName: playlistName,
   };
 
-  const url = ` http://localhost:3000/playlist/create/${videoId}`;
+  const url = ` https://fittube.herokuapp.com/playlist/create/${videoId}`;
 
   try {
     const config = {
@@ -58,7 +58,7 @@ export async function renamePlaylistAPI(token, playlistName, newName) {
     newName: newName,
   };
 
-  const url = ` http://localhost:3000/playlist/rename`;
+  const url = ` https://fittube.herokuapp.com/playlist/rename`;
 
   try {
     const config = {
