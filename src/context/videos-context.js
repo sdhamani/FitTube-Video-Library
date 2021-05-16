@@ -17,12 +17,14 @@ export default function useVideos() {
 
 export function VideosProvider({ children }) {
   const { data, setData } = useData();
-  const [allVideos, setallVideos] = useState([]);
 
   useEffect(() => {
     async function fecthVideos() {
       const response = await GetVideos();
+      console.log("res", { response });
       if (response.success) {
+        console.log("dispcalled", response.videos);
+        videosdispatch({ TYPE: "ALLVIDEOS", PAYLOAD: response.videos });
         setData(response.videos);
       } else {
         console.log(response.data.message);
@@ -33,29 +35,34 @@ export function VideosProvider({ children }) {
   }, []);
 
   const dispatchfunc = (state, value) => {
-    const searchText = value.PAYLOAD.toLowerCase();
     switch (value.TYPE) {
+      case "ALLVIDEOS":
+        return value.PAYLOAD;
       case "SEARCH":
+        const searchText = value.PAYLOAD.toLowerCase();
+
         if (searchText !== "") {
-          state = allVideos;
-          return state.filter((item) => {
+          const updatedState = state.filter((item) => {
             const itemName = item.name.toLowerCase();
 
             return itemName.includes(searchText);
           });
+          setData(updatedState);
+          return state;
         } else {
-          return allVideos;
+          setData(state);
+          return state;
         }
       default:
         return state;
     }
   };
 
-  const [videos, videosdispatch] = useReducer(dispatchfunc, data);
+  const [videos, videosdispatch] = useReducer(dispatchfunc, []);
 
   return (
     <VideosContainer.Provider
-      value={{ videos: data, videosdispatch: videosdispatch }}
+      value={{ videos: videos, videosdispatch: videosdispatch }}
     >
       {children}
     </VideosContainer.Provider>

@@ -3,15 +3,15 @@ import Swipe from "react-easy-swipe";
 import useData from "../context/data-context";
 
 import { useState } from "react";
+import useVideos from "../context/videos-context";
 function ToggleVideos() {
   const { data, setData } = useData();
+  const { videos, videosdispatch } = useVideos();
   const [counter1, Setcounter1] = useState(1);
   const [counter2, Setcounter2] = useState(2);
   const [counter3, Setcounter3] = useState(3);
   const [counter4, Setcounter4] = useState(4);
   const [counter5, Setcounter5] = useState(5);
-
-  let videos = data;
 
   const leftCounter = (counter, Setcounter) => {
     if (counter === 1) {
@@ -44,6 +44,12 @@ function ToggleVideos() {
     rightCounter(counter5, Setcounter5);
   };
 
+  let video1 = "https://www.youtube.com/embed/LCOy-6BcRkI";
+  let video2 = "https://www.youtube.com/embed/QRZcZgSgSHI";
+  let video3 = "https://www.youtube.com/embed/7KSNmziMqog";
+  let video4 = "https://www.youtube.com/embed/VWj8ZxCxrYk ";
+  let video5 = "https://www.youtube.com/embed/sTANio_2E0Q";
+
   return (
     <Swipe
       onSwipeRight={(e) => rightVideoHandler()}
@@ -63,7 +69,7 @@ function ToggleVideos() {
         <div style={{ background_color: "blue" }}>
           <iframe
             className={`toggle-video-iframe-${counter1}`}
-            src={videos[14].videoLink}
+            src={video1}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -73,7 +79,7 @@ function ToggleVideos() {
 
         <iframe
           className={`toggle-video-iframe-${counter2}`}
-          src={videos[7].videoLink}
+          src={video2}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -81,7 +87,7 @@ function ToggleVideos() {
         ></iframe>
         <iframe
           className={`toggle-video-iframe-${counter3}`}
-          src={videos[16].videoLink}
+          src={video3}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -89,7 +95,7 @@ function ToggleVideos() {
         ></iframe>
         <iframe
           className={`toggle-video-iframe-${counter4}`}
-          src={videos[11].videoLink}
+          src={video4}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -97,7 +103,7 @@ function ToggleVideos() {
         ></iframe>
         <iframe
           className={`toggle-video-iframe-${counter5}`}
-          src={videos[5].videoLink}
+          src={video5}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

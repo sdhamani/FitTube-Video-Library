@@ -4,7 +4,10 @@ import "./components.css";
 import SideBar from "./SideBar";
 import useVideos from "../context/videos-context";
 import useLogin from "../context/login-context";
+import useData from "../context/data-context";
+
 function NavBar() {
+  const { data, setData } = useData();
   const [searchText, setSearchText] = useState("");
   const { videosdispatch } = useVideos();
   const navigate = useNavigate();
